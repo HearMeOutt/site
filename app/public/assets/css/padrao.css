@@ -1,0 +1,33 @@
+/* !CORES! */
+:root{
+    --Preto-cor: #2d2d29;
+    --Cinza-cor: #CCC;
+    --Branco-cor: #fff;
+    --AzulEscuro-cor: #215a6d;
+    --AzulClaro-cor: #3ca2a2;
+    --Verde-cor: #92c7a3;
+    --VerdeEscuro-cor: #7bab8a;
+    --Cinza-cor: #dfece6;
+}
+
+/* !FONTES! */
+@font-face{
+    font-family: MiedingerBold;
+    src: url(../../assets/fonts/Miedinger_-Bold.otf);
+}
+@font-face {
+    font-family: MiedingerBook;
+    src: url(../../assets/fonts/Miedinger_-Book.otf);
+}
+@font-face {
+    font-family: UnisonBold;
+    src: url(../../assets/fonts/Type\ Juice\ -\ Unison\ Pro\ Bold\ Round.otf);
+}
+@font-face {
+    font-family: UnisonLight;
+    src: url(../../assets/fonts/Type\ Juice\ -\ Unison\ Pro\ Light\ Round.otf);
+}
+@font-face {
+    font-family: Akira;
+    src: url(../../assets/fonts/Akira\ Expanded\ Demo.otf);
+}
