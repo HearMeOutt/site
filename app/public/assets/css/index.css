@@ -10,6 +10,8 @@
     --Cinza-cor: #dfece6;
 }
 
+
+/* !BEM VINDO! */
 .fundo_topo{
     width: 96%;
     background-color: var(--AzulClaro-cor);
@@ -73,12 +75,13 @@
     background-color: var(--AzulClaro-cor);
 }
 
+
+/* !CARDS! */ 
 .container_cards{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 5%;
     position: relative;
     top: -50px;
 }
@@ -96,6 +99,9 @@
     align-items: center;
     justify-content: center;
 }
+.card3 .img_card img{
+    width: 70%;
+}
 .img_card i{
     font-size: 100px;
     color: var(--AzulEscuro-cor);
@@ -108,4 +114,85 @@
     justify-content: center;
     font-size: 1.3em;
     text-align: center;
+}
+
+
+/* !CONTAINER! */
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+/* *CONHECA* */
+.conheca{
+    width: 96%;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--Verde-cor);
+}
+.titulo_conheca{
+    color: var(--Branco-cor);
+    text-align: center;
+    font-size: 2em;
+}
+.container_conheca{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_conheca{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_conheca img{
+    width: 60%;
+    padding: 2%;
+}
+.infos_conheca{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.txt_conheca{
+    width: 100%;
+    display: flex;
+    width: 80%;
+}
+.txt_conheca h1{
+    color: var(--Branco-cor);
+    font-size: 1.3em;
+}
+.list_conheca{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.list_conheca_item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.list_conheca_item h1{
+    color: var(--Branco-cor);
+    font-size: 1.5em;
+}
+.list_conheca_item i{
+    color: var(--AzulEscuro-cor);
+    font-size: 2.5em;
 }
