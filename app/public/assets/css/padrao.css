@@ -13,21 +13,52 @@
 /* !FONTES! */
 @font-face{
     font-family: MiedingerBold;
-    src: url(../../assets/fonts/Miedinger_-Bold.otf);
+    src: url(../fonts/Miedinger_-Bold.otf);
 }
 @font-face {
     font-family: MiedingerBook;
-    src: url(../../assets/fonts/Miedinger_-Book.otf);
+    src: url(../fonts/Miedinger_-Book.otf);
 }
 @font-face {
     font-family: UnisonBold;
-    src: url(../../assets/fonts/Type\ Juice\ -\ Unison\ Pro\ Bold\ Round.otf);
+    src: url(../fonts/Type\ Juice\ -\ Unison\ Pro\ Bold\ Round.otf);
 }
 @font-face {
     font-family: UnisonLight;
-    src: url(../../assets/fonts/Type\ Juice\ -\ Unison\ Pro\ Light\ Round.otf);
+    src: url(../fonts/Type\ Juice\ -\ Unison\ Pro\ Light\ Round.otf);
 }
 @font-face {
     font-family: Akira;
-    src: url(../../assets/fonts/Akira\ Expanded\ Demo.otf);
+    src: url(../fonts/Akira\ Expanded\ Demo.otf);
+}
+@font-face {
+    font-family: MontserratBold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: MontserratRegular;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Michroma;
+    src: url(../fonts/Michroma.ttf);
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    background-color: var(--Cinza-cor);
+    margin-top: 125px;
+}
+
+.MontserratBold{
+    font-family: MontserratBold;
+}
+.MontserratRegular{
+    font-family: MontserratRegular;
+}
+.Michroma{
+    font-family: Michroma;
 }
