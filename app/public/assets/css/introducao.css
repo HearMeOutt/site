@@ -1,0 +1,124 @@
+/* !CORES! */
+:root{
+    --Preto-cor: #2d2d29;
+    --Cinza-cor: #CCC;
+    --Branco-cor: #fff;
+    --AzulEscuro-cor: #215a6d;
+    --AzulClaro-cor: #3ca2a2;
+    --Verde-cor: #92c7a3;
+    --VerdeEscuro-cor: #7bab8a;
+    --Cinza-cor: #dfece6;
+}
+
+/* !Módulos! */
+.container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.introducao{
+    width: 100%;
+    padding: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+.modulos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.titulo h1{
+    color: var(--AzulEscuro-cor);
+    font-size: 1.6em;
+}
+.container_modulos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.card_modulo{
+    width: 300px;
+    height: 350px;
+    background-color: var(--Branco-cor);
+    border-radius: 15px;
+    gap: 40px;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 5px 5px 0px rgba(143,139,143,1);
+}
+.img_card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_card img{
+    width: 60%;
+}
+.nome_modulo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nome_modulo h2{
+    color: var(--AzulEscuro-cor);
+    font-size: 1.2em;
+}
+.btn_view{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.visualizar{
+    padding: 6% 8% 6% 8%;
+    font-size: 1.1em;
+    background-color: var(--AzulClaro-cor);
+    color: var(--Branco-cor);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.visualizar:hover{
+    background-color: var(--AzulEscuro-cor);
+}
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.gear {
+    width: 150px;
+    height: 150px;
+    animation: rotate 4s linear infinite;
+}
+
+.gear img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) saturate(100%) invert(30%) sepia(23%) saturate(1190%) hue-rotate(149deg) brightness(93%) contrast(91%);
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -15,7 +15,6 @@
 .fundo_topo{
     width: 96%;
     background-color: var(--AzulClaro-cor);
-    padding-bottom: 10%;
     padding: 2%;
     border-radius: 0% 0% 30% 30%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
