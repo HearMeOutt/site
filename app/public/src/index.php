@@ -62,6 +62,8 @@
         
         <!-- !CONTAINER! -->
         <div class="container">
+
+            <!-- !CONHECA! -->
             <div class="conheca">
                 <h1 class="Michroma titulo_conheca">CONHEÇA O HEAR ME OUT!</h1>
                 <div class="container_conheca">
@@ -88,7 +90,25 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
+            
+            <!-- !ALFABETO! -->
+            <div class="alfabeto">
+                <div class="infos_alfabeto">
+                    <div class="txt_alfabeto">
+                        <h2 class="Michroma">
+                            Aprenda o alfabeto em Libras com feedback ao vivo por um preço que cabe no seu bolso!
+                        </h2>
+                    </div>
+                    <div class="btn_alfabeto">
+                        <a class="Montserrat" href="">INSCREVA-SE JÁ!</a>
+                    </div>
+                </div>
+                <div class="img_alfabeto">
+                    <img src="../assets/img/alfabeto_cores_hearmeout.png" alt="Simbolização do alfabeto">
+                </div>
+            </div>
+
         </div>
     </body>
 </html>

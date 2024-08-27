@@ -112,7 +112,7 @@
 .gear img {
     width: 100%;
     height: 100%;
-    filter: brightness(0) saturate(100%) invert(30%) sepia(23%) saturate(1190%) hue-rotate(149deg) brightness(93%) contrast(91%);
+    filter: brightness(0) saturate(100%) inve rt(30%) sepia(23%) saturate(1190%) hue-rotate(149deg) brightness(93%) contrast(91%);
 }
 @keyframes rotate {
     from {

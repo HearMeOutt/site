@@ -122,7 +122,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin-top: 2%;
+    background-color: var(--Verde-cor);
 }
 
 /* *CONHECA* */
@@ -133,7 +135,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--Verde-cor);
+    background-color: var(--AzulEscuro-cor);
 }
 .titulo_conheca{
     color: var(--Branco-cor);
@@ -192,6 +194,6 @@
     font-size: 1.5em;
 }
 .list_conheca_item i{
-    color: var(--AzulEscuro-cor);
+    color: var(--Branco-cor);
     font-size: 2.5em;
 }
