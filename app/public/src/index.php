@@ -72,20 +72,20 @@
                     </div>
                     <div class="infos_conheca">
                         <div class="txt_conheca">
-                            <h1 class="Montserrat">Em nossa plataforma de aprendizado de Libras,  acreditamos que a comunicação é essencial. Nossa missão é promover a inclusão e facilitar a aprendizagem da Língua Brasileira de Sinais (Libras) para todos. </h1>
+                            <h1 class="MontserratRegular">Em nossa plataforma de aprendizado de Libras,  acreditamos que a comunicação é essencial. Nossa missão é promover a inclusão e facilitar a aprendizagem da Língua Brasileira de Sinais (Libras) para todos. </h1>
                         </div>
                         <div class="list_conheca">
                             <div class="list_conheca_item">
                                 <i class="fa-regular fa-face-smile"></i>
-                                <h1 class="Montserrat">Explicação simplificada</h1>
+                                <h1 class="MontserratBold">Explicação simplificada</h1>
                             </div>
                             <div class="list_conheca_item">
                                 <i class="fa-regular fa-thumbs-up"></i>
-                                <h1 class="Montserrat">Do teórico ao prático</h1>
+                                <h1 class="MontserratBold">Do teórico ao prático</h1>
                             </div>
                             <div class="list_conheca_item">
                                 <i class="fa-regular fa-clock"></i>
-                                <h1 class="Montserrat">Corretor em tempo real</h1>
+                                <h1 class="MontserratBold">Corretor em tempo real</h1>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                         </h2>
                     </div>
                     <div class="btn_alfabeto">
-                        <a class="Montserrat" href="">INSCREVA-SE JÁ!</a>
+                        <a href="#" class="MontserratBold">INSCREVA-SE JÁ!</a>
                     </div>
                 </div>
                 <div class="img_alfabeto">
@@ -109,6 +109,7 @@
                 </div>
             </div>
 
+            
         </div>
     </body>
 </html>

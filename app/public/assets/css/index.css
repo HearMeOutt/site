@@ -197,3 +197,54 @@
     color: var(--Branco-cor);
     font-size: 2.5em;
 }
+
+/* *ALFABETO* */
+.alfabeto{
+    width: 96%;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Branco-cor);
+}
+.infos_alfabeto{
+    width: 66%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.txt_alfabeto{
+    width: 100%;
+    padding: 4% 0 4% 0;
+    display: flex;
+    align-items: center;
+}
+.txt_alfabeto h2{
+    font-size: 1.3em;
+}
+.btn_alfabeto{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.btn_alfabeto a{
+    padding: 2%;
+    color: var(--Branco-cor);
+    background-color: var(--AzulClaro-cor);
+    border-radius: 15px;
+    border: solid 2px var(--AzulClaro-cor);
+    transition: 0.3s;
+}
+.btn_alfabeto a:hover{
+    color: var(--AzulClaro-cor);
+    background-color: var(--Branco-cor);
+}
+.img_alfabeto{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_alfabeto img{
+    width: 45%;
+}
