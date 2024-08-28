@@ -1,0 +1,90 @@
+/* !CORES! */
+:root{
+    --Preto-cor: #2d2d29;
+    --Cinza-cor: #CCC;
+    --Branco-cor: #fff;
+    --AzulEscuro-cor: #215a6d;
+    --AzulClaro-cor: #3ca2a2;
+    --Verde-cor: #92c7a3;
+    --VerdeEscuro-cor: #7bab8a;
+    --Cinza-cor: #dfece6;
+}
+
+/* !FOOTER! */
+footer{
+    width: 96%;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--AzulClaro-cor);
+    gap: 15px;
+}
+.container_footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.infos_footer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.infos_footer h1{
+    font-size: 2em;
+    color: var(--Branco-cor);
+}
+.contato_footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.instagram, .email{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--Branco-cor);
+    font-size: 1.2em;
+}
+.instagram a i, .email a i{
+    color: var(--Branco-cor);
+    transition: 0.3s;
+}
+.instagram a i:hover, .email a i:hover{
+    color: var(--AzulEscuro-cor);
+}
+.instagram a i{
+    font-size: 40px;
+}
+.email a i{
+    font-size: 35px;
+}
+.menu_footer{ 
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.menu_footer a{
+    color: var(--Branco-cor);
+    font-size: 1.3em;
+    transition: 0.3s;
+}
+.menu_footer a:hover{
+    color: var(--AzulEscuro-cor);
+}
+.termos{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: var(--Branco-cor);
+    font-size: 1.2em;
+}

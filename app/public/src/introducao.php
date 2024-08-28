@@ -16,8 +16,9 @@
                 <div class="titulo Michroma">
                     <h1>INTRODUÇÃO A LIBRAS:</h1>
                 </div>
+
                 <div class="modulos">
-                    <div class="container_modulos">
+                    <!-- <div class="container_modulos">
                         <div class="card_modulo card1">
                             <div class="img_card">
                                 <img src="../assets/img/alfabeto.png" alt="Letras do alfabeto">
@@ -50,9 +51,41 @@
                                 <h2 class="Michroma">Em desenvolvimento</h2>
                             </div>
                         </div>
+                    </div> -->
+
+                    <div class="modulo_libras">
+                        <div class="img_libras">
+                            <img src="../assets/img/alfabeto.png" alt="Letras do alfabeto">
+                        </div>
+                        <div class="info_libras">
+                            <div class="titulo_libras">
+                                <h1 class="MontserratBold">Módulo: Alfabeto em libras</h1>
+                            </div>
+                            <div class="txt_libras">
+                                <p class="MontserratRegular">O módulo do alfabeto em Libras oferece uma introdução prática e interativa às letras, ensinando você a soletrar e reconhecer cada uma delas com precisão. Com exercícios dinâmicos e feedback instantâneo, você vai ganhar confiança na comunicação básica em Libras, de forma rápida e acessível. Ideal para iniciantes!</p>
+                            </div>
+                            <div class="btn_libras">
+                                <a href="modulo_alfabeto.php" class="visualizar MontserratRegular">VISUALIZAR</a>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="card_modulo card3">
+                        <div class="img_card">
+                            <div class="gear">
+                                <img src="https://assets.codepen.io/6093409/gear.svg.png" alt="an illustration of a gear" />
+                            </div>
+                        </div>
+                        <div class="nome_modulo">
+                            <h2 class="Michroma">Em desenvolvimento</h2>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+        <?php
+            include('../assets/components/footer.php');
+        ?>
     </body>
 </html>

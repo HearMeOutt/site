@@ -50,6 +50,10 @@ header{
 }
 .itens_nav{
     color: var(--Branco-cor);
+    transition: 0.3;
+}
+.itens_nav:hover{
+    color: var(--AzulEscuro-cor);
 }
 .btn_entrar{
     background-color: var(--AzulEscuro-cor);

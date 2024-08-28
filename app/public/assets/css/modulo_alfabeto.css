@@ -1,0 +1,135 @@
+/* !CORES! */
+:root{
+    --Preto-cor: #2d2d29;
+    --Cinza-cor: #CCC;
+    --Branco-cor: #fff;
+    --AzulEscuro-cor: #215a6d;
+    --AzulClaro-cor: #3ca2a2;
+    --Verde-cor: #92c7a3;
+    --VerdeEscuro-cor: #7bab8a;
+    --Cinza-cor: #dfece6;
+}
+
+/* !MODULO ALFABETO! */
+.container{
+    width: 96%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Branco-cor);
+    gap: 30px;
+}
+.titulo_modulo{
+    width: 100%;
+    display: flex;
+    color: var(--AzulEscuro-cor);
+    font-size: 2em;
+}
+.container_cards{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.card{
+    width: 1000px;
+    padding: 2%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.card_cinza{
+    background-color: var(--Cinza-cor);
+}
+.card_verde{
+    background-color: var(--Verde-cor);
+}
+.titulo_card{
+    width: 100%;
+    display: flex;
+    font-size: 1.5em;
+}
+.txt_card{
+    width: 100%;
+    display: flex;
+}
+.txt_card ul{
+    gap: 10px;
+}
+.txt_card li{
+    list-style: inside;
+    font-size: 1.3em;
+}
+.card1{
+    width: 1000px;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.img_card1{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_card1 img{
+    width: 80%;
+}
+.txt_card1{
+    width: 80%;
+    display: flex;
+    font-size: 1.3em;
+}
+.botoes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.botoes h1{
+    font-size: 1.3em;
+    text-align: center;
+}
+.btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.inscrever{
+    color: var(--Branco-cor);
+    background-color: var(--AzulEscuro-cor);
+    padding: 0.8%;
+    border-radius: 10px;
+    border: solid 2px var(--AzulEscuro-cor);
+    font-size: 1.4em;
+    transition: 0.3s;
+}
+.inscrever:hover{
+    background-color: var(--Branco-cor);
+    color: var(--AzulEscuro-cor);
+}
+.teste{
+    color: var(--AzulEscuro-cor);
+    background-color: var(--Branco-cor);
+    padding: 0.8%;
+    border-radius: 10px;
+    border: solid 2px var(--AzulEscuro-cor);
+    font-size: 1.4em;
+    transition: 0.3s;
+}
+.teste:hover{
+    color: var(--Branco-cor);
+    background-color: var(--AzulEscuro-cor);
+}

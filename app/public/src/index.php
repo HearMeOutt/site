@@ -107,9 +107,12 @@
                 <div class="img_alfabeto">
                     <img src="../assets/img/alfabeto_cores_hearmeout.png" alt="Simbolização do alfabeto">
                 </div>
-            </div>
-
-            
+            </div>    
         </div>
+
+        <?php
+            include ('../assets/components/footer.php')
+        ?>
+
     </body>
 </html>
