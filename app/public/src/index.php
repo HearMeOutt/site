@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="img_topo">
-                    <img src="" alt="Persona fazendo sinal de libras">
+                    <img src="../assets/img/persona.png" alt="Persona fazendo sinal de libras">
                 </div>
             </div>
         </div>

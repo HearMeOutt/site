@@ -22,7 +22,7 @@
     gap: 30px;
 }
 .titulo_modulo{
-    width: 100%;
+    width: 1050px;
     display: flex;
     color: var(--AzulEscuro-cor);
     font-size: 2em;
