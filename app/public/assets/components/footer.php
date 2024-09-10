@@ -21,7 +21,7 @@
                 </div>
                 <div class="menu_footer">
                     <a href="introducao.php" class="MontserratRegular">Introdução a Libras</a>
-                    <a href="cadastro.php" class="MontserratRegular">Castre-se</a>
+                    <a href="cadastro.php" class="MontserratRegular">Cadastre-se</a>
                     <a href="suporte.php" class="MontserratRegular">Suporte</a>
                 </div>
             </div>
