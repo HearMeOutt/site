@@ -14,11 +14,20 @@
         );
 
         $context  = stream_context_create($options);
-        $url = 'http://localhost/site/app/public/src/cadastro.php/usuario';
+        $url = 'http://localhost/site/api/api.php/usuario';
         $result = file_get_contents($url, false, $context);
 
         if ($result === FALSE) {
-            echo "<p>Erro ao adicionar usuario.</p>";
-        } 
+            echo "<p>Erro ao adicionar aluno.</p>";
+        } else { ?>
+            <script>
+                // Exibe o alerta
+                alert('Operação concluída com sucesso!');
+
+                // Após o usuário clicar em "OK", redireciona para outra página
+                window.location.href = '../src/login.php'; // Altere para a página de destino
+            </script>
+        <?php
+        }
     }
     ?>

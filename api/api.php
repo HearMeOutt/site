@@ -18,8 +18,6 @@
     $terceiraparte = isset($path_parts[2]) ? $path_parts[2] : '';
     $quartaparte = isset($path_parts[3]) ? $path_parts[3] : '';
     $quintaparte = isset($path_parts[4]) ? $path_parts[4] : '';
-    $sextaparte = isset($path_parts[5]) ? $path_parts[5] : '';
-    $setimaparte = isset($path_parts[6]) ? $path_parts[6] : '';
 
     $resposta = [
         'metodo' => $metodo,
@@ -28,8 +26,6 @@
         'terceiraparte' => $terceiraparte,
         'quartaparte' => $quartaparte,
         'quintaparte' => $quintaparte,
-        'sextaparte' => $sextaparte,
-        'setimaparte' => $setimaparte,
     ];
 
     //echo json_encode($resposta);
@@ -39,7 +35,7 @@
             break;
         
         case 'POST':
-            if ($quintaparte = 'usuario'){
+            if ($quartaparte = 'usuario'){
                 insere_usuario();
             }
             break;
@@ -62,7 +58,7 @@
         $input = json_decode(file_get_contents('php://input'), true);
         $nome = $input['nome'];
         $email = $input['email'];
-        $senha = $senha['senha'];
+        $senha = $input['senha'];
 
         $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
