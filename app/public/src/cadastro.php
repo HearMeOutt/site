@@ -26,13 +26,19 @@
                             <span class="MontserratRegular" id="span_email_valido">Informar um email válido</span>
                         </div>
                         <div class="item_forms">
-                            <input type="password" name="senha" id="senha" class="MontserratRegular" placeholder="Digite sua senha">
+                            <div class="senha_">
+                                <input type="password" name="senha" id="senha" class="MontserratRegular" placeholder="Digite sua senha">
+                                <i id="olho" class="fa-solid fa-eye-slash" onclick="versenha()"></i>
+                            </div>
                             <span class="MontserratRegular" id="span_senha">Informar uma senha</span>
                             <span class="MontserratRegular" id="span_senha_valida">A senha deve ter ao menos 8 dígitos</span>
                             <span class="MontserratRegular" id="span_senha_segura">A senha deve ter ao menos uma letra maiúscula uma minuscula um numero e um caracter especial</span>
                         </div>
                         <div class="item_forms">
-                            <input type="password" name="confirmar_senha" id="confirmar_senha" class="MontserratRegular" placeholder="Confirme a senha">
+                            <div class="senha_">
+                                <input type="password" name="confirmar_senha" id="confirmar_senha" class="MontserratRegular" placeholder="Confirme a senha">
+                                <i id="olhoconfirmar" class="fa-solid fa-eye-slash" onclick="verconfirmarsenha()"></i>
+                            </div>
                             <span class="MontserratRegular" id="span_confirmar_senha">Confirmar senha</span>
                             <span class="MontserratRegular" id="span_senha_diferente">A senha não é igual</span>
                         </div>

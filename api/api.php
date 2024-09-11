@@ -18,6 +18,7 @@
     $terceiraparte = isset($path_parts[2]) ? $path_parts[2] : '';
     $quartaparte = isset($path_parts[3]) ? $path_parts[3] : '';
     $quintaparte = isset($path_parts[4]) ? $path_parts[4] : '';
+    $sextaparte = isset($path_parts[5]) ? $path_parts[5] : '';
 
     $resposta = [
         'metodo' => $metodo,
@@ -26,17 +27,21 @@
         'terceiraparte' => $terceiraparte,
         'quartaparte' => $quartaparte,
         'quintaparte' => $quintaparte,
+        'sextaparte' => $sextaparte
     ];
 
     //echo json_encode($resposta);
 
     switch($metodo){
         case 'GET':
+            if ($quartaparte = 'usuario' && $quintaparte = 'email' && $sextaparte != ''){
+                GetAlunosByEmail($sextaparte);
+            }
             break;
         
         case 'POST':
             if ($quartaparte = 'usuario'){
-                insere_usuario();
+                PostUsuario();
             }
             break;
             
@@ -53,7 +58,26 @@
             break;
     }
 
-    function insere_usuario(){
+
+
+    //!FUNCTIONS
+    //!GET
+    function GetAlunosByEmail($sextaparte){
+        global $conexao;
+        $stmt = $conexao->prepare("SELECT * FROM usuario WHERE email = '$sextaparte'");
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $usuario = $resultado->fetch_assoc();
+        
+        echo json_encode([
+            'mensagem' => 'Infos usuário',
+            'dados' => $usuario
+        ]);
+    }
+
+
+    //!POST
+    function PostUsuario(){
         global $conexao;
         $input = json_decode(file_get_contents('php://input'), true);
         $nome = $input['nome'];
@@ -73,5 +97,9 @@
             ]);
         }
     }
+
+    //!PUT
+
+    //!DELETE
 
 ?>

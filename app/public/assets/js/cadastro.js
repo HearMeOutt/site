@@ -17,7 +17,7 @@ const confirmarSenha = document.querySelector("#confirmar_senha");
 const spanConfirmarSenha = document.getElementById('span_confirmar_senha');
 const spanSenhaDiferente = document.getElementById('span_senha_diferente');
 
-const politica_privacidade = document.querySelector("#politica_privacidade");
+let politica_privacidade = document.getElementById("politica_privacidade");
 const spanPolitica_privacidade = document.getElementById('span_politica_privacidade');
 
 form.addEventListener("submit", (event) =>{
@@ -117,23 +117,20 @@ form.addEventListener("submit", (event) =>{
     }
 
     //!Verificar se a politica de privacidade está vazio
-    if(politica_privacidade.value === "on"){
-        spanPolitica_privacidade.classList.add('active');
-    }else{
+    if(politica_privacidade.checked){
         spanPolitica_privacidade.classList.remove('active');
-
         condicaoTermos = true;
+    }else{
+        spanPolitica_privacidade.classList.add('active'); 
     }
 
+   
     if(condicaoNome & condicaoEmail & condicaoSenha & condicaoConfirmarSenha & condicaoTermos){
         form.submit();
     }
+
+    
 });
-
-
-
-
-
 
 
 
@@ -199,4 +196,27 @@ function validarSenhaSegura(senha){
  
 console.log(retorno);
  return retorno;
+}
+
+
+//!olho para ver a senha
+const olho = document.getElementById('olho');
+const olhoconfirmar= document.getElementById('olhoconfirmar');
+function versenha(){
+    if(senha.getAttribute('type') == 'password'){
+        senha.setAttribute('type','text');
+        olho.classList.add('fa-eye');
+    }else{
+        senha.setAttribute('type','password');
+        olho.classList.remove('fa-eye');
+    }
+}
+function verconfirmarsenha(){
+    if(confirmarSenha.getAttribute('type') == 'password'){
+        confirmarSenha.setAttribute('type','text');
+        olhoconfirmar.classList.add('fa-eye');
+    }else{
+        confirmarSenha.setAttribute('type','password');
+        olhoconfirmar.classList.remove('fa-eye');
+    }
 }

@@ -4,7 +4,9 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
-        $data = array("nome" => $nome, "email" => $email, "senha" => $senha);
+        $senha_hash = password_hash($senha,PASSWORD_DEFAULT);
+
+        $data = array("nome" => $nome, "email" => $email, "senha" => $senha_hash);
         $options = array(
             'http' => array(
                 'header'  => "Content-type: application/json\r\n",
@@ -19,10 +21,11 @@
 
         if ($result === FALSE) {
             echo "<p>Erro ao adicionar aluno.</p>";
-        } else { ?>
+        } else { 
+        ?>
             <script>
                 // Exibe o alerta
-                alert('Operação concluída com sucesso!');
+                alert('Cadastrado com sucesso!');
 
                 // Após o usuário clicar em "OK", redireciona para outra página
                 window.location.href = '../src/login.php'; // Altere para a página de destino
@@ -30,4 +33,4 @@
         <?php
         }
     }
-    ?>
+?>
