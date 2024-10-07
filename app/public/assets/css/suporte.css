@@ -1,0 +1,74 @@
+/* !CORES! */
+:root{
+    --Preto-cor: #2d2d29;
+    --Cinza-cor: #CCC;
+    --Branco-cor: #fff;
+    --AzulEscuro-cor: #215a6d;
+    --AzulClaro-cor: #3ca2a2;
+    --Verde-cor: #92c7a3;
+    --VerdeEscuro-cor: #7bab8a;
+    --Cinza-cor: #dfece6;
+}
+
+/* !SUPORTE! */
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Branco-cor);
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.titulo_suporte{
+    display: flex;
+    width: 80%;
+}
+.titulo_suporte h1{
+    font-size: 2em;
+    color: var(--AzulEscuro-cor);
+}
+.container_suporte{
+    width: 70%;
+    padding: 2%;
+    background-color: var(--Cinza-cor);
+    border-radius: 10px;
+}
+.container_suporte h2{
+    width: 100%;
+    margin-bottom: 2%;
+    font-size: 1.3em;
+}
+.form_contato{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.txt{
+    width: 100%;
+    padding: 1%;
+    border: none;
+    border-radius: 5px;
+}
+.btn_enviar{
+    width: 150px;
+    padding: 1%;
+    font-size: 0.9em;
+    border: none;
+    background-color: var(--AzulEscuro-cor);
+    color: var(--Branco-cor);
+    border-radius: 10px;
+    margin-top: 2%;
+    cursor: pointer;
+    border: solid 1px var(--AzulEscuro-cor);
+    transition: 0.5s;
+}
+.btn_enviar:hover{
+    background-color: var(--Cinza-cor);
+    color: var(--Preto-cor);
+}

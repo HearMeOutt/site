@@ -34,13 +34,13 @@
 
     switch($metodo){
         case 'GET':
-            if ($quartaparte = 'usuario' && $quintaparte = 'email' && $sextaparte != ''){
-                GetAlunosByEmail($sextaparte);
+            if ($terceiraparte = 'usuario' && $quartaparte = 'email' && $quintaparte != ''){
+                GetAlunosByEmail($quintaparte);
             }
             break;
         
         case 'POST':
-            if ($quartaparte = 'usuario'){
+            if ($terceira = 'usuario'){
                 PostUsuario();
             }
             break;
@@ -62,9 +62,9 @@
 
     //!FUNCTIONS
     //!GET
-    function GetAlunosByEmail($sextaparte){
+    function GetAlunosByEmail($quintaparte){
         global $conexao;
-        $stmt = $conexao->prepare("SELECT * FROM usuario WHERE email = '$sextaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
@@ -84,7 +84,7 @@
         $email = $input['email'];
         $senha = $input['senha'];
 
-        $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
         if($conexao->query($sql) == TRUE){
             echo json_encode([

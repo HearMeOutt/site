@@ -103,7 +103,7 @@
                 <h1 class="MontserratRegular">Clique no botão abaixo para se inscrever e começar sua jornada no aprendizado de Libras!</h1>
                 <div class="btns">
                     <a href="" class="MontserratRegular inscrever">Inscreva-se Agora!</a>
-                    <a href="" class="MontserratRegular teste">Teste grátis</a>
+                    <a href="../../../IA/index.html" class="MontserratRegular teste">Teste grátis</a>
                 </div>
             </div>
         </div>
