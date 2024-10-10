@@ -38,6 +38,9 @@
             if ($terceiraparte = 'usuario' && $quartaparte = 'email' && $quintaparte != ''){
                 GetAlunosByEmail($quintaparte);
             }
+                if ($terceira = 'usuarios' && $quarta = 'email' && $quinta != ''){
+                GetAlunosByEmail($quinta);
+            }
             break;
         
         case 'POST':
@@ -65,19 +68,22 @@
     // !LOCAL!
     switch($metodo){
         case 'GET':
-            if ($quartaparte = 'usuarios' && $quintaparte = 'email' && $sextaparte != ''){
+            if ($quartaparte = 'usuarios' && $quintaparte == 'email' && $sextaparte != ''){
                 GetAlunosByEmail($sextaparte);
+            }
+            if ($quartaparte = 'usuarios' && $quintaparte == 'id' && $sextaparte != ''){
+                GetAlunosByID($sextaparte);
             }
             break;
         
         case 'POST':
-            if ($quartaparte = 'usuarios'){
+            if ($quartaparte == 'usuarios'){
                 PostUsuario();
             }
             break;
             
         case 'PUT':
-            if ($quartaparte = 'usuarios'){
+            if ($quartaparte == 'usuarios'){
                 PutUsuario();
             }
             break;
@@ -107,6 +113,20 @@
         
         echo json_encode([
             'mensagem' => 'Infos usuário',
+            'dados' => $usuario
+        ]);
+    }
+
+    function GetAlunosByID($sextaparte){
+        global $conexao;
+        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$sextaparte'");
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $usuario = $resultado->fetch_assoc();
+        
+        echo json_encode([
+            'mensagem' => 'Infos usuario',
             'dados' => $usuario
         ]);
     }

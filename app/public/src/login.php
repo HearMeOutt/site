@@ -17,9 +17,6 @@
             echo $data['dados']['email'];
             if(password_verify(($senha_login),$data['dados']['senha'])){
                 $_SESSION['id_usuario'] = $data['dados']['id_usuario'];
-                $_SESSION['nome'] = $data['dados']['nome'];
-                $_SESSION['email'] = $data['dados']['email'];
-                $_SESSION['telefone'] = $data['dados']['telefone'];
                 echo 'login realizado com sucesso';
                 header('Location: index.php');
             }else{
@@ -43,7 +40,7 @@
     </head>
     <body>
         <div class="content">
-            <a href="index.php" class="voltar"><i class="fa-solid fa-angle-left"></i></a>
+            <a href="javascript:history.back()" class="voltar"><i class="fa-solid fa-angle-left"></i></a>
             <div class="login_cadastro">
                 <div class="titulo">
                     <h1 class="MontserratBold">Faça Login</h1>

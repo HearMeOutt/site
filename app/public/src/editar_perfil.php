@@ -1,17 +1,22 @@
 <?php
     session_start();
-    if((!isset($_SESSION['id_usuario']) == true) and (!isset($_SESSION['nome']) == true) and (!isset($_SESSION['email']) == true)){
+    if((!isset($_SESSION['id_usuario']) == true)){
         unset($_SESSION['id_usuario']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-        unset($_SESSION['telefone']);
 
         //echo 'deslogado';
         $logado = false;
+
+        header('location: index.php');
     }else{
         //echo 'logado';
         $logado = true;
     }
+?>
+<?php
+    $id_usuario = $_SESSION['id_usuario'];
+    $url = "http://localhost/site/api/api.php/usuarios/id/{$id_usuario}";
+    $response = file_get_contents($url);
+    $data = json_decode($response, true);
 ?>
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -30,7 +35,7 @@
                 <div class="menu_perfil">
                     <div class="img_perfil">
                         <i class="fa-solid fa-user perfil_img"></i>
-                        <h1 class="MontserratBold"><?php echo($_SESSION['nome']); ?></h1>
+                        <h1 class="MontserratBold"><?php echo($data['dados']['nome']); ?></h1>
                     </div>
                     <div class="nav_perfil">
                         <a href="perfil.php" class="MontserratRegular">Perfil</a>
@@ -50,18 +55,18 @@
                     <form action="../rotas/atualiza_usuario.php" method="POST" class="forms_editar">
                         <div class="item_forms">
                             <h2 class="MontserratBold">Nome:</h2>
-                            <input type="text" name="nome_novo" id="nome_novo" value="<?php echo($_SESSION['nome']); ?>" class="MontserratRegular">
+                            <input type="text" name="nome_novo" id="nome_novo" value="<?php echo($data['dados']['nome']); ?>" class="MontserratRegular">
                         </div>
                         <div class="item_forms">
                             <h2 class="MontserratBold">Email:</h2>
-                            <input type="text" name="email_novo" id="email_novo" value="<?php echo($_SESSION['email']); ?>">
+                            <input type="text" name="email_novo" id="email_novo" value="<?php echo($data['dados']['email']); ?>">
                         </div>
                         <div class="item_forms">
                             <h2 class="MontserratBold">Telefone:</h2>
-                            <input type="text" name="telefone_novo" id="telefone_novo" value="<?php echo($_SESSION['telefone']); ?>">
+                            <input type="text" name="telefone_novo" id="telefone_novo" value="<?php echo($data['dados']['telefone']); ?>">
                         </div>
 
-                        <button type="submit">ATUALIZAR</button>
+                        <button type="submit" class="btn_att MontserratRegular">Concluir</button>
                     </form>
                 </div>
             </div>

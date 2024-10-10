@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="content">
-            <a href="index.php" class="voltar"><i class="fa-solid fa-angle-left"></i></a>
+            <a href="javascript:history.back()" class="voltar"><i class="fa-solid fa-angle-left"></i></a>
             <div class="login_cadastro">
                 <div class="titulo">
                     <h1 class="MontserratBold">Cadastro</h1>

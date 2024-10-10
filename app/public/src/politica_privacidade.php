@@ -1,17 +1,22 @@
 <?php
     session_start();
-    if((!isset($_SESSION['id']) == true) and (!isset($_SESSION['nome']) == true) and (!isset($_SESSION['email']) == true)){
-        unset($_SESSION['id']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-        unset($_SESSION['telefone']);
+    if((!isset($_SESSION['id_usuario']) == true)){
+        unset($_SESSION['id_usuario']);
 
         //echo 'deslogado';
         $logado = false;
+
+        header('location: index.php');
     }else{
         //echo 'logado';
         $logado = true;
     }
+?>
+<?php
+    $id_usuario = $_SESSION['id_usuario'];
+    $url = "http://localhost/site/api/api.php/usuarios/id/{$id_usuario}";
+    $response = file_get_contents($url);
+    $data = json_decode($response, true);
 ?>
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -30,7 +35,7 @@
                 <div class="menu_perfil">
                     <div class="img_perfil">
                         <i class="fa-solid fa-user perfil_img"></i>
-                        <h1 class="MontserratBold"><?php echo($_SESSION['nome']); ?></h1>
+                        <h1 class="MontserratBold"><?php echo($data['dados']['nome']); ?></h1>
                     </div>
                     <div class="nav_perfil">
                         <a href="perfil.php" class="MontserratRegular">Perfil</a>

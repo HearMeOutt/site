@@ -1,10 +1,7 @@
 <?php
     session_start();
-    if((!isset($_SESSION['id']) == true) and (!isset($_SESSION['nome']) == true) and (!isset($_SESSION['email']) == true)){
-        unset($_SESSION['id']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-        unset($_SESSION['telefone']);
+    if((!isset($_SESSION['id_usuario']) == true)){
+        unset($_SESSION['id_usuario']);
 
         //echo 'deslogado';
         $logado = false;
@@ -39,6 +36,10 @@
                     </div>
                     <div class="txt_card1">
                         <h2 class="MontserratRegular">Neste módulo do alfabeto em Libras, você aprenderá a soletrar e reconhecer cada letra por meio de aulas práticas e interativas. Projetado para iniciantes, o curso combina material didático de alta qualidade com tecnologia de ponta para garantir um aprendizado eficaz e acessível.</h2>
+                    </div>
+                    <div class="valor">
+                        <h2 class="MontserratBold">Por apenas</h2>
+                        <h1 class="MontserratBold">R$10,00</h1>
                     </div>
                 </div>
                 <!-- !CARD2! -->
@@ -118,7 +119,7 @@
                 <h1 class="MontserratRegular">Clique no botão abaixo para se inscrever e começar sua jornada no aprendizado de Libras!</h1>
                 <div class="btns">
                     <a href="" class="MontserratRegular inscrever">Inscreva-se Agora!</a>
-                    <a href="../../../IA/index.html" class="MontserratRegular teste">Teste grátis</a>
+                    <a href="teste_gratis.php" class="MontserratRegular teste">Teste grátis</a>
                 </div>
             </div>
         </div>

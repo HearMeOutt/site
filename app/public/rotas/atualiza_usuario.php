@@ -38,7 +38,7 @@
         } else { ?>
             <script>
                 // Exibe o alerta
-                alert('Operação concluída com sucesso!');
+                alert('Perfil atualizado com sucesso!');
 
                 // Após o usuário clicar em "OK", redireciona para outra página
                 window.location.href = '../src/perfil.php'; // Altere para a página de destino

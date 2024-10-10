@@ -1,10 +1,7 @@
 <?php
     session_start();
-    if((!isset($_SESSION['id']) == true) and (!isset($_SESSION['nome']) == true) and (!isset($_SESSION['email']) == true)){
-        unset($_SESSION['id']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-        unset($_SESSION['telefone']);
+    if((!isset($_SESSION['id_usuario']) == true)){
+        unset($_SESSION['id_usuario']);
 
         //echo 'deslogado';
         $logado = false;
@@ -12,6 +9,12 @@
         //echo 'logado';
         $logado = true;
     }
+?>
+<?php
+    $id_usuario = $_SESSION['id_usuario'];
+    $url = "http://localhost/site/api/api.php/usuarios/id/{$id_usuario}";
+    $response = file_get_contents($url);
+    $data = json_decode($response, true);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

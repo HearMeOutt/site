@@ -1,10 +1,7 @@
 <?php
     session_start();
-    if((!isset($_SESSION['id']) == true) and (!isset($_SESSION['nome']) == true) and (!isset($_SESSION['email']) == true)){
-        unset($_SESSION['id']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-        unset($_SESSION['telefone']);
+    if((!isset($_SESSION['id_usuario']) == true)){
+        unset($_SESSION['id_usuario']);
 
         //echo 'deslogado';
         $logado = false;
@@ -68,7 +65,24 @@
                         </div>
                     </div> -->
 
-                    <div class="modulo_libras">
+                    <div class="modulos_cards">
+                        <div class="img_libras">
+                            <img src="../assets/img/teorico.png" alt="Letras do alfabeto">
+                        </div>
+                        <div class="info_libras">
+                            <div class="titulo_libras">
+                                <h1 class="MontserratBold">Módulo: Teórico</h1>
+                            </div>
+                            <div class="txt_libras">
+                                <p class="MontserratRegular">O módulo de Introdução a Libras abrange a história, importância e aspectos fundamentais da Língua Brasileira de Sinais. Além disso, aborda aspectos culturais, legislação e métodos de ensino, promovendo uma compreensão abrangente e inclusiva da língua e da comunidade surda.</p>
+                            </div>
+                            <div class="btn_libras">
+                                <a href="pagamento.php" class="btn_comprar MontserratRegular">R$10,00</a>
+                                <a href="modulo_teorico.php" class="visualizar MontserratRegular">VISUALIZAR</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modulos_cards">
                         <div class="img_libras">
                             <img src="../assets/img/alfabeto.png" alt="Letras do alfabeto">
                         </div>
@@ -80,7 +94,25 @@
                                 <p class="MontserratRegular">O módulo do alfabeto em Libras oferece uma introdução prática e interativa às letras, ensinando você a soletrar e reconhecer cada uma delas com precisão. Com exercícios dinâmicos e feedback instantâneo, você vai ganhar confiança na comunicação básica em Libras, de forma rápida e acessível. Ideal para iniciantes!</p>
                             </div>
                             <div class="btn_libras">
+                                <a href="pagamento.php" class="btn_comprar MontserratRegular">R$10,00</a>
                                 <a href="modulo_alfabeto.php" class="visualizar MontserratRegular">VISUALIZAR</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modulos_cards">
+                        <div class="img_libras">
+                            <img src="../assets/img/numeros.png" alt="Letras do alfabeto">
+                        </div>
+                        <div class="info_libras">
+                            <div class="titulo_libras">
+                                <h1 class="MontserratBold">Módulo: Números em libras</h1>
+                            </div>
+                            <div class="txt_libras">
+                                <p class="MontserratRegular">O módulo do alfabeto em Libras oferece uma introdução prática e interativa às letras, ensinando você a soletrar e reconhecer cada uma delas com precisão. Com exercícios dinâmicos e feedback instantâneo, você vai ganhar confiança na comunicação básica em Libras, de forma rápida e acessível. Ideal para iniciantes!</p>
+                            </div>
+                            <div class="btn_libras">
+                                <a href="pagamento.php" class="btn_comprar MontserratRegular">R$10,00</a>
+                                <a href="modulo_numeros.php" class="visualizar MontserratRegular">VISUALIZAR</a>
                             </div>
                         </div>
                     </div>

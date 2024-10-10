@@ -1,10 +1,8 @@
 <?php
     session_start();
-    if((!isset($_SESSION['id']) == true) and (!isset($_SESSION['nome']) == true) and (!isset($_SESSION['email']) == true)){
-        unset($_SESSION['id']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-
+    if((!isset($_SESSION['id_usuario']) == true)){
+        unset($_SESSION['id_usuario']);
+        
         //echo 'deslogado';
         $logado = false;
     }else{
