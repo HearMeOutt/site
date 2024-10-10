@@ -4,7 +4,6 @@
         unset($_SESSION['id']);
         unset($_SESSION['nome']);
         unset($_SESSION['email']);
-        unset($_SESSION['telefone']);
 
         //echo 'deslogado';
         $logado = false;
@@ -17,10 +16,14 @@
 <html lang="pt-br">
     <head>
         <?php
-            include('../assets/components/head.php');
+            include ('../assets/components/head.php')
         ?>
+        <link rel="stylesheet" href="../assets/css/correcao.css">
     </head>
     <body>
+        <?php
+            include ('../assets/components/header.php')
+        ?>
         
     </body>
 </html>

@@ -32,6 +32,7 @@
 
     //echo json_encode($resposta);
 
+    /* // !SERVIDOR!
     switch($metodo){
         case 'GET':
             if ($terceiraparte = 'usuario' && $quartaparte = 'email' && $quintaparte != ''){
@@ -46,6 +47,39 @@
             break;
             
         case 'PUT':
+            if ($terceira = 'usuarios'){
+                PutUsuario();
+            }
+            break;
+        
+        case 'DELETE':
+            break;
+        
+        default:
+            echo json_encode([
+                'mensagem' => 'Método não permitido!'
+            ]);
+            break;
+    } */
+    
+    // !LOCAL!
+    switch($metodo){
+        case 'GET':
+            if ($quartaparte = 'usuarios' && $quintaparte = 'email' && $sextaparte != ''){
+                GetAlunosByEmail($sextaparte);
+            }
+            break;
+        
+        case 'POST':
+            if ($quartaparte = 'usuarios'){
+                PostUsuario();
+            }
+            break;
+            
+        case 'PUT':
+            if ($quartaparte = 'usuarios'){
+                PutUsuario();
+            }
             break;
         
         case 'DELETE':
@@ -62,9 +96,11 @@
 
     //!FUNCTIONS
     //!GET
-    function GetAlunosByEmail($quintaparte){
+    //function GetAlunosByEmail($quintaparte)
+    function GetAlunosByEmail($sextaparte){
         global $conexao;
-        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
+        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
@@ -82,9 +118,12 @@
         $input = json_decode(file_get_contents('php://input'), true);
         $nome = $input['nome'];
         $email = $input['email'];
+        $telefone = $input['telefone'];
         $senha = $input['senha'];
 
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+        echo($senha);
+
+        $sql = "INSERT INTO usuarios (nome,email,telefone,senha) VALUES ('$nome','$email','$telefone','$senha')";
 
         if($conexao->query($sql) == TRUE){
             echo json_encode([
@@ -99,6 +138,27 @@
     }
 
     //!PUT
+    function PutUsuario(){
+        global $conexao;
+        $input = json_decode(file_get_contents('php://input'), true);
+        $id_usuario = $input['id_usuario'];
+        $nome_novo = $input['nome_novo'];
+        $email_novo = $input['email_novo'];
+        $telefone_novo = $input['telefone_novo'];
+
+        $sql = "UPDATE usuarios SET nome = '$nome_novo', email = '$email_novo', telefone = '$telefone_novo' WHERE id_usuario = '$id_usuario'";
+
+        if($conexao->query($sql) == TRUE){
+            echo json_encode([
+                'mensagem' => 'USUARIO ATUALIZADO COM SUCESSO'
+            ]);
+        }
+        else {
+            echo json_encode([
+                'mensagem' => 'ERRO ATUALIZAÇÃO DO USUARIO'
+            ]);
+        }
+    }
 
     //!DELETE
 

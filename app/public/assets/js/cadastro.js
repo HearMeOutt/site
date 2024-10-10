@@ -1,3 +1,17 @@
+// !MASK!
+$(document).ready(function () {
+    // Adicionando máscara ao campo de telefone
+    $("#telefone").mask("(00)00000-0000");
+
+    // Adicionando máscara ao campo de CPF
+    // $("#CEP").mask("00000-000");
+
+    // Adicionando máscara ao campo de data de nascimento
+    //$("#data_nascimento").mask("00/00/0000");
+
+    //$("#CPF").mask("000.000.000-00");
+});
+
 const form = document.querySelector("#forms_cadastro");
 
 const nome = document.querySelector("#nome");
@@ -7,6 +21,10 @@ const spanNomeErrado = document.getElementById('span_nome_errado');
 const email = document.querySelector("#email");
 const spanEmail = document.getElementById('span_email');
 const spanEmailValido = document.getElementById('span_email_valido');
+
+const telefone = document.querySelector("#telefone");
+const spanTelefone = document.getElementById('span_telefone');
+const spanTelefoneValido = document.getElementById('span_telefone_valido');
 
 const senha = document.querySelector("#senha");
 const spanSenha = document.getElementById('span_senha');
@@ -26,6 +44,7 @@ form.addEventListener("submit", (event) =>{
 
     var condicaoNome = false;
     var condicaoEmail = false;
+    var condicaoTelefone = false
     var condicaoSenha = false;
     var condicaoConfirmarSenha = false;
     var condicaoTermos = false;
@@ -66,6 +85,26 @@ form.addEventListener("submit", (event) =>{
             spanEmailValido.classList.remove('active');
 
             condicaoEmail = true;
+        }
+    }
+
+    //!verificar se o telefone está vazio
+    if(telefone.value === ""){
+        telefone.classList.add('active');
+        spanTelefone.classList.add('active');
+    }else{
+        telefone.classList.remove('active');
+        spanTelefone.classList.remove('active');
+
+        //!Verificar se o telefone contém 14 dígitos (11 dígitos mais os () e o -)
+        if(telefone.value.length != 14){
+            telefone.classList.add('active');
+            spanTelefoneValido.classList.add('active');
+        }else{
+            telefone.classList.remove('active');
+            spanTelefoneValido.classList.remove('active');
+
+            condicaoTelefone = true;
         }
     }
 
@@ -125,7 +164,7 @@ form.addEventListener("submit", (event) =>{
     }
 
    
-    if(condicaoNome & condicaoEmail & condicaoSenha & condicaoConfirmarSenha & condicaoTermos){
+    if(condicaoNome & condicaoEmail & condicaoTelefone & condicaoSenha & condicaoConfirmarSenha & condicaoTermos){
         form.submit();
     }
 

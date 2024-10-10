@@ -21,9 +21,14 @@
                             <span class="MontserratRegular" id="span_nome_errado">O nome deve conter mais de 3 letras</span>
                         </div>
                         <div class="item_forms">
-                            <input type="text" name="email" id="email" class="MontserratRegular" placeholder="Digite se e-mail">
+                            <input type="text" name="email" id="email" class="MontserratRegular" placeholder="Digite seu e-mail">
                             <span class="MontserratRegular" id="span_email">Informar um email</span>
                             <span class="MontserratRegular" id="span_email_valido">Informar um email válido</span>
+                        </div>
+                        <div class="item_forms">
+                            <input type="text" name="telefone" id="telefone" class="MontserratRegular" placeholder="Digite seu telefone">
+                            <span class="MontserratRegular" id="span_telefone">Informar um telefone</span>
+                            <span class="MontserratRegular" id="span_telefone_valido">Informar um telefone válido</span>
                         </div>
                         <div class="item_forms">
                             <div class="senha_">

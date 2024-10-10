@@ -1,27 +1,25 @@
 <?php
+    session_start();
     $is_invalid = false;
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $email_login = $_POST['email'];
         $senha_login = $_POST['senha'];
 
-        $url = "http://hearmeout.informatica3c.com.br/api/api.php/usuario/email/{$email_login}";
+        $url = "http://localhost/site/api/api.php/usuario/email/{$email_login}";
+        //$url = "http://hearmeout.informatica3c.com.br/api/api.php/usuario/email/{$email_login}";
         $response = file_get_contents($url);
         $data = json_decode($response, true);
-
-        echo $data;
 
 
         if(!empty($data['dados']['email'])){
             echo 'email encontrado';
             echo $data['dados']['email'];
             if(password_verify(($senha_login),$data['dados']['senha'])){
-                session_start();
-                $_SESSION = [
-                    'id' => $data['dados']['id'],
-                    'nome' => $data['dados']['nome'],
-                    'email' => $data['dados']['email']
-                ];
+                $_SESSION['id_usuario'] = $data['dados']['id_usuario'];
+                $_SESSION['nome'] = $data['dados']['nome'];
+                $_SESSION['email'] = $data['dados']['email'];
+                $_SESSION['telefone'] = $data['dados']['telefone'];
                 echo 'login realizado com sucesso';
                 header('Location: index.php');
             }else{

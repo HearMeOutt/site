@@ -76,3 +76,11 @@ header{
     color: var(--Branco-cor);
     background-color: var(--AzulEscuro-cor);
 }
+.item_profile{
+    font-size: 30px;
+    color: var(--Branco-cor);
+    transition: 0.3s;
+}
+.item_profile:hover{
+    color: var(--AzulEscuro-cor);
+}

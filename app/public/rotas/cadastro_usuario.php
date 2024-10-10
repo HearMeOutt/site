@@ -2,11 +2,12 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
+        $telfone = $_POST['telefone'];
         $senha = $_POST['senha'];
 
         $senha_hash = password_hash($senha,PASSWORD_DEFAULT);
 
-        $data = array("nome" => $nome, "email" => $email, "senha" => $senha_hash);
+        $data = array("nome" => $nome, "email" => $email, "telefone" => $telfone , "senha" => $senha_hash);
         $options = array(
             'http' => array(
                 'header'  => "Content-type: application/json\r\n",
@@ -16,7 +17,8 @@
         );
 
         $context  = stream_context_create($options);
-        $url = 'http://hearmeout.informatica3c.com.br/api/api.php/usuario';
+        $url = 'http://localhost/site/api/api.php/usuarios';
+        //$url = 'http://hearmeout.informatica3c.com.br/api/api.php/usuarios';
         $result = file_get_contents($url, false, $context);
 
         if ($result === FALSE) {

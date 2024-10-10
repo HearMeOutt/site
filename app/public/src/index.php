@@ -4,10 +4,13 @@
         unset($_SESSION['id']);
         unset($_SESSION['nome']);
         unset($_SESSION['email']);
+        unset($_SESSION['telefone']);
 
         //echo 'deslogado';
+        $logado = false;
     }else{
         //echo 'logado';
+        $logado = true;
     }
 ?>
 <!DOCTYPE html>

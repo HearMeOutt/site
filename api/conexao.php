@@ -1,8 +1,8 @@
 <?php
     $host = 'localhost';
-    $usuario = 'u301136860_root';
-    $senha = 'HearMeOut@123';
-    $banco = 'u301136860_hearmeout';
+    $usuario = 'root';
+    $senha = '';
+    $banco = 'hearmeout';
 
     $conexao = new mysqli ($host, $usuario, $senha, $banco);
 
