@@ -32,25 +32,25 @@
 
     //echo json_encode($resposta);
 
-    /* // !SERVIDOR!
+
     switch($metodo){
         case 'GET':
-            if ($terceiraparte = 'usuario' && $quartaparte = 'email' && $quintaparte != ''){
+            if ($terceiraparte == 'usuarios' && $quartaparte == 'email' && $quintaparte != ''){
                 GetAlunosByEmail($quintaparte);
             }
-                if ($terceira = 'usuarios' && $quarta = 'email' && $quinta != ''){
-                GetAlunosByEmail($quinta);
+            elseif ($terceiraparte == 'usuarios' && $quartaparte == 'id' && $quintaparte != ''){
+                GetAlunosByID($quintaparte);
             }
             break;
         
         case 'POST':
-            if ($terceira = 'usuario'){
+            if ($terceiraparte == 'usuarios'){
                 PostUsuario();
             }
             break;
             
         case 'PUT':
-            if ($terceira = 'usuarios'){
+            if ($terceiraparte == 'usuarios'){
                 PutUsuario();
             }
             break;
@@ -63,15 +63,16 @@
                 'mensagem' => 'Método não permitido!'
             ]);
             break;
-    } */
+    }
     
-    // !LOCAL!
+    
+    /* // !LOCAL!
     switch($metodo){
         case 'GET':
-            if ($quartaparte = 'usuarios' && $quintaparte == 'email' && $sextaparte != ''){
+            if ($quartaparte == 'usuarios' && $quintaparte == 'email' && $sextaparte != ''){
                 GetAlunosByEmail($sextaparte);
             }
-            if ($quartaparte = 'usuarios' && $quintaparte == 'id' && $sextaparte != ''){
+            if ($quartaparte == 'usuarios' && $quintaparte == 'id' && $sextaparte != ''){
                 GetAlunosByID($sextaparte);
             }
             break;
@@ -96,31 +97,33 @@
                 'mensagem' => 'Método não permitido!'
             ]);
             break;
-    }
+    } */
 
 
 
     //!FUNCTIONS
     //!GET
-    //function GetAlunosByEmail($quintaparte)
-    function GetAlunosByEmail($sextaparte){
+    function GetAlunosByEmail($quintaparte){
+    // function GetAlunosByEmail($sextaparte){
         global $conexao;
-        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
-        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$sextaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
+        // $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
         
         echo json_encode([
-            'mensagem' => 'Infos usuário',
+            'mensagem' => 'Infos usuario',
             'dados' => $usuario
         ]);
+        
     }
-
-    function GetAlunosByID($sextaparte){
+    
+    function GetAlunosByID($quintaparte){
+    //function GetAlunosByID($sextaparte){
         global $conexao;
-        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
-        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$sextaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$quintaparte'");
+        // $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
@@ -141,7 +144,7 @@
         $telefone = $input['telefone'];
         $senha = $input['senha'];
 
-        echo($senha);
+        // echo($senha);
 
         $sql = "INSERT INTO usuarios (nome,email,telefone,senha) VALUES ('$nome','$email','$telefone','$senha')";
 

@@ -3,9 +3,6 @@
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "../assets/IA/numeros/";
-    
-    const camera = document.getElementById('camera');
-    const identificado = document.getElementById('identificado');
 
     let model, webcam, labelContainer, maxPredictions;
 
@@ -46,6 +43,10 @@
 
     // run the webcam image through the image model
     async function predict() {
+        
+        const camera = document.getElementById('camera');
+        const identificado = document.getElementById('identificado');
+        
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++){

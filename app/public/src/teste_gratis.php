@@ -17,6 +17,10 @@
             include ('../assets/components/head.php')
         ?>
         <link rel="stylesheet" href="../assets/css/teste_gratis.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+        <script src="../assets/IA/numeros/numeros.js"></script>
     </head>
     <body>
         <?php
@@ -53,8 +57,6 @@
             include('../assets/components/footer.php');
         ?>
 
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-        <script src="../assets/IA/numeros/numeros.js"></script>
+        
     </body>
 </html>

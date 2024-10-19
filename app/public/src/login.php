@@ -6,8 +6,8 @@
         $email_login = $_POST['email'];
         $senha_login = $_POST['senha'];
 
-        $url = "http://localhost/site/api/api.php/usuario/email/{$email_login}";
-        //$url = "http://hearmeout.informatica3c.com.br/api/api.php/usuario/email/{$email_login}";
+        // $url = "http://localhost/site/api/api.php/usuario/email/{$email_login}";
+        $url = "https://hearmeout.informatica3c.com.br/api/api.php/usuarios/email/{$email_login}";
         $response = file_get_contents($url);
         $data = json_decode($response, true);
 
