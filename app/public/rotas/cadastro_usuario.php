@@ -17,8 +17,8 @@
         );
 
         $context  = stream_context_create($options);
-        //$url = 'http://localhost/site/api/api.php/usuarios';
-        $url = 'https://hearmeout.informatica3c.com.br/api/api.php/usuarios';
+        $url = 'http://localhost/site/api/api.php/usuarios';
+        //$url = 'https://hearmeout.informatica3c.com.br/api/api.php/usuarios';
         $result = file_get_contents($url, false, $context);
 
         if ($result === FALSE) {

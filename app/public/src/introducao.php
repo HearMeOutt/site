@@ -65,57 +65,38 @@
                         </div>
                     </div> -->
 
-                    <div class="modulos_cards">
-                        <div class="img_libras">
-                            <img src="../assets/img/teorico.png" alt="Letras do alfabeto">
-                        </div>
-                        <div class="info_libras">
-                            <div class="titulo_libras">
-                                <h1 class="MontserratBold">Módulo: Teórico</h1>
-                            </div>
-                            <div class="txt_libras">
-                                <p class="MontserratRegular">O módulo de Introdução a Libras abrange a história, importância e aspectos fundamentais da Língua Brasileira de Sinais. Além disso, aborda aspectos culturais, legislação e métodos de ensino, promovendo uma compreensão abrangente e inclusiva da língua e da comunidade surda.</p>
-                            </div>
-                            <div class="btn_libras">
-                                <a href="pagamento.php" class="btn_comprar MontserratRegular">R$10,00</a>
-                                <a href="modulo_teorico.php" class="visualizar MontserratRegular">VISUALIZAR</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modulos_cards">
-                        <div class="img_libras">
-                            <img src="../assets/img/alfabeto.png" alt="Letras do alfabeto">
-                        </div>
-                        <div class="info_libras">
-                            <div class="titulo_libras">
-                                <h1 class="MontserratBold">Módulo: Alfabeto em libras</h1>
-                            </div>
-                            <div class="txt_libras">
-                                <p class="MontserratRegular">O módulo do alfabeto em Libras oferece uma introdução prática e interativa às letras, ensinando você a soletrar e reconhecer cada uma delas com precisão. Com exercícios dinâmicos e feedback instantâneo, você vai ganhar confiança na comunicação básica em Libras, de forma rápida e acessível. Ideal para iniciantes!</p>
-                            </div>
-                            <div class="btn_libras">
-                                <a href="pagamento.php" class="btn_comprar MontserratRegular">R$10,00</a>
-                                <a href="modulo_alfabeto.php" class="visualizar MontserratRegular">VISUALIZAR</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modulos_cards">
-                        <div class="img_libras">
-                            <img src="../assets/img/numeros.png" alt="Letras do alfabeto">
-                        </div>
-                        <div class="info_libras">
-                            <div class="titulo_libras">
-                                <h1 class="MontserratBold">Módulo: Números em libras</h1>
-                            </div>
-                            <div class="txt_libras">
-                                <p class="MontserratRegular">O módulo do alfabeto em Libras oferece uma introdução prática e interativa às letras, ensinando você a soletrar e reconhecer cada uma delas com precisão. Com exercícios dinâmicos e feedback instantâneo, você vai ganhar confiança na comunicação básica em Libras, de forma rápida e acessível. Ideal para iniciantes!</p>
-                            </div>
-                            <div class="btn_libras">
-                                <a href="pagamento.php" class="btn_comprar MontserratRegular">R$10,00</a>
-                                <a href="modulo_numeros.php" class="visualizar MontserratRegular">VISUALIZAR</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                        $url = 'http://localhost/site/api/api.php/cursos';
+                        // $url = 'https://hearmeout.informatica3c.com.br/api/api.php/cursos';
+                        $response = file_get_contents($url);
+                        $data = json_decode($response, true);
+
+                        if (isset($data['dados'])) {
+                            foreach ($data['dados'] as $cursos) {
+                                ?>
+                                    <div class="modulos_cards">
+                                        <div class="img_libras">
+                                            <img src="../assets/img/<?php echo($cursos['nome']); ?>.png" alt="<?php echo($cursos['nome']); ?>">
+                                        </div>
+                                        <div class="info_libras">
+                                            <div class="titulo_libras">
+                                                <h1 class="MontserratBold">Módulo: <?php echo($cursos['nome']); ?></h1>
+                                            </div>
+                                            <div class="txt_libras">
+                                                <p class="MontserratRegular"><?php echo($cursos['descricao']); ?></p>
+                                            </div>
+                                            <div class="btn_libras">
+                                                <a href="<?php if($logado == true){echo("pagamento.php?curso=".$cursos['id_curso']);}else{echo('login.php');}?>" class="btn_comprar MontserratRegular">R$ <?php echo($cursos['valor']); ?></a>
+                                                <a href="modulo_teorico.php" class="visualizar MontserratRegular">VISUALIZAR</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                            }
+                        } else {
+                            echo '<p>Nenhum aluno encontrado.</p>';
+                        }
+                    ?>
 
                     <!-- <div class="card_modulo card3">
                         <div class="img_card">

@@ -1,13 +1,13 @@
 <?php
-    //$host = 'localhost';
-    //$usuario = 'root';
-    //$senha = '';
-    //$banco = 'hearmeout';
-    
     $host = 'localhost';
-    $usuario = 'u301136860_root';
-    $senha = '@Hearmeout2024';
-    $banco = 'u301136860_hearmeout';
+    $usuario = 'root';
+    $senha = '';
+    $banco = 'hearmeout';
+    
+    //$host = 'localhost';
+    //$usuario = 'u301136860_root';
+    //$senha = '@Hearmeout2024';
+    //$banco = 'u301136860_hearmeout';
     
 
     $conexao = new mysqli ($host, $usuario, $senha, $banco);

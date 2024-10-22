@@ -1,0 +1,110 @@
+/* !CORES! */
+:root{
+    --Preto-cor: #2d2d29;
+    --Cinza-cor: #CCC;
+    --Branco-cor: #fff;
+    --CinzaClaro-cor:#f5f5f5;
+    --AzulEscuro-cor: #215a6d;
+    --AzulClaro-cor: #3ca2a2;
+    --Verde-cor: #92c7a3;
+    --VerdeEscuro-cor: #7bab8a;
+    --CinzaClaro-cor: #dfece6;
+    --Vermelho-cor: #D62424;
+    --CinzaFundo-cor: #D9D9D9;
+}
+
+.container{
+    width: 92%;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--CinzaClaro-cor);
+    gap: 40px;
+}
+.titulo_curso{
+    width: 100%;
+    display: flex;
+}
+.titulo_curso h1{
+    font-size: 1.8em;
+    color: var(--AzulEscuro-cor);
+}
+.txt_libras{
+    display: flex;
+    align-items: center;
+}
+.txt_libras p{
+    font-size: 1.2em;
+}
+.img_curso{
+    width: 20%;
+}
+.infos_curso{
+    width: 80%;
+    display: flex;
+    gap: 30px;
+}
+.aula{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.titulo_aula{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulo_aula h1{
+    font-size: 1.5em;
+    color: var(--AzulEscuro-cor);
+}
+.videoaula{
+    width: 50%;
+}
+video{
+    width: 100%;
+}
+.btns_aula{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.btns_aula a{
+    background-color: var(--AzulEscuro-cor);
+    color: var(--Branco-cor);
+    padding: 2% 3% 2% 3%;
+    border-radius: 10px;
+    border: solid 1px var(--AzulEscuro-cor);
+    font-size: 1.1em;
+}
+.btns_aula a:hover{
+    background-color: var(--CinzaClaro-cor);
+    color: var(--Preto-cor);
+}
+.btn_pdf_ia{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.btn_pdf_ia a{
+    width: 300px;
+    background-color: var(--CinzaClaro-cor);
+    color: var(--Preto-cor);
+    padding: 2% 3% 2% 3%;
+    border-radius: 10px;
+    color: var(--Preto-cor);
+    border: solid 1px var(--AzulClaro-cor);
+    font-size: 1.1em;
+}
+.btn_pdf_ia a:hover{
+    background-color: var(--AzulEscuro-cor);
+    color: var(--Branco-cor);
+}
+

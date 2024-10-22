@@ -33,58 +33,36 @@
     //echo json_encode($resposta);
 
 
-    switch($metodo){
+    /* switch($metodo){
         case 'GET':
             if ($terceiraparte == 'usuarios' && $quartaparte == 'email' && $quintaparte != ''){
                 GetAlunosByEmail($quintaparte);
             }
-            elseif ($terceiraparte == 'usuarios' && $quartaparte == 'id' && $quintaparte != ''){
+            if ($terceiraparte == 'usuarios' && $quartaparte == 'id' && $quintaparte != ''){
                 GetAlunosByID($quintaparte);
             }
+            if ($terceiraparte == 'cursos' && $quartaparte == ''){
+                GetCursos();
+            }
+            if ($terceiraparte == 'cursos' && $quartaparte == 'id' && $quintaparte != ''){
+                GetCursosByID($quintaparte);
+            }
+            if ($terceiraparte == 'matricula' && $quartaparte == 'id_usuario' && $quintaparte != ''){
+                GetMatriculaByIDUsuario($quintaparte);
+            }
             break;
         
         case 'POST':
             if ($terceiraparte == 'usuarios'){
                 PostUsuario();
             }
+            if ($terceiraparte == 'matricula'){
+                PostMatricula();
+            }
             break;
             
         case 'PUT':
             if ($terceiraparte == 'usuarios'){
-                PutUsuario();
-            }
-            break;
-        
-        case 'DELETE':
-            break;
-        
-        default:
-            echo json_encode([
-                'mensagem' => 'Método não permitido!'
-            ]);
-            break;
-    }
-    
-    
-    /* // !LOCAL!
-    switch($metodo){
-        case 'GET':
-            if ($quartaparte == 'usuarios' && $quintaparte == 'email' && $sextaparte != ''){
-                GetAlunosByEmail($sextaparte);
-            }
-            if ($quartaparte == 'usuarios' && $quintaparte == 'id' && $sextaparte != ''){
-                GetAlunosByID($sextaparte);
-            }
-            break;
-        
-        case 'POST':
-            if ($quartaparte == 'usuarios'){
-                PostUsuario();
-            }
-            break;
-            
-        case 'PUT':
-            if ($quartaparte == 'usuarios'){
                 PutUsuario();
             }
             break;
@@ -98,16 +76,62 @@
             ]);
             break;
     } */
+    
+    
+    // !LOCAL!
+    switch($metodo){
+        case 'GET':
+            if ($quartaparte == 'usuarios' && $quintaparte == 'email' && $sextaparte != ''){
+                GetAlunosByEmail($sextaparte);
+            }
+            if ($quartaparte == 'usuarios' && $quintaparte == 'id' && $sextaparte != ''){
+                GetAlunosByID($sextaparte);
+            }
+            if ($quartaparte == 'cursos' && $quintaparte == ''){
+                GetCursos();
+            }
+            if ($quartaparte == 'cursos' && $quintaparte == 'id' && $sextaparte != ''){
+                GetCursosByID($sextaparte);
+            }
+            if ($quartaparte == 'matricula' && $quintaparte == 'id_usuario' && $sextaparte != ''){
+                GetMatriculaByIDUsuario($sextaparte);
+            }
+            break;
+        
+        case 'POST':
+            if ($quartaparte == 'usuarios'){
+                PostUsuario();
+            }
+            if ($quartaparte == 'matricula'){
+                PostMatricula();
+            }
+            break;
+            
+        case 'PUT':
+            if ($quartaparte == 'usuarios'){
+                PutUsuario();
+            }
+            break;
+        
+        case 'DELETE':
+            break;
+        
+        default:
+            echo json_encode([
+                'mensagem' => 'Método não permitido!'
+            ]);
+            break;
+    }
 
 
 
     //!FUNCTIONS
     //!GET
-    function GetAlunosByEmail($quintaparte){
-    // function GetAlunosByEmail($sextaparte){
+    //function GetAlunosByEmail($quintaparte){
+    function GetAlunosByEmail($sextaparte){
         global $conexao;
-        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
-        // $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$sextaparte'");
+        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
@@ -119,11 +143,11 @@
         
     }
     
-    function GetAlunosByID($quintaparte){
-    //function GetAlunosByID($sextaparte){
+    //function GetAlunosByID($quintaparte){
+    function GetAlunosByID($sextaparte){
         global $conexao;
-        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$quintaparte'");
-        // $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$sextaparte'");
+        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$quintaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
@@ -131,6 +155,43 @@
         echo json_encode([
             'mensagem' => 'Infos usuario',
             'dados' => $usuario
+        ]);
+    }
+
+    function GetCursos(){
+        global $conexao;
+        $resultado = $conexao->query("SELECT * FROM cursos");
+        $cursos = $resultado->fetch_all(MYSQLI_ASSOC);
+        echo json_encode([
+            'mensagem' => 'LISTA DE TODOS OS ALUNOS',
+            'dados' => $cursos
+        ]);
+    }
+
+    // function GetCursosByID($quintaparte){
+    function GetCursosByID($sextaparte){
+        global $conexao;
+        //$stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = '$quintaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = '$sextaparte'");
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        $curso = $resultado->fetch_assoc();
+        
+        echo json_encode([
+            'mensagem' => 'Infos curso',
+            'dados' => $curso
+        ]);
+    }
+
+    //function GetMatriculaByIDUsuario($quintaparte){
+    function GetMatriculaByIDUsuario($sextaparte){
+        global $conexao;
+        //$resultado = $conexao->query("SELECT * FROM matriculas WHERE fk_usuarios_id_usuario = $quintaparte");
+        $resultado = $conexao->query("SELECT * FROM matriculas WHERE fk_usuarios_id_usuario = $sextaparte");
+        $matricula = $resultado->fetch_all(MYSQLI_ASSOC);
+        echo json_encode([
+            'mensagem' => 'LISTA todas as matriculas vinculadas com o id do usuario',
+            'dados' => $matricula
         ]);
     }
 
@@ -156,6 +217,26 @@
         else {
             echo json_encode([
                 'mensagem' => 'ERRO NO CADASTRO DO USUARIO'
+            ]);
+        }
+    }
+
+    function PostMatricula(){
+        global $conexao;
+        $input = json_decode(file_get_contents('php://input'), true);
+        $id_usuario = $input['fk_usuarios_id_usuario'];
+        $id_curso = $input['fk_cursos_id_curso'];
+
+        $sql = "INSERT INTO matriculas (fk_usuarios_id_usuario,fk_cursos_id_curso) VALUES ('$id_usuario','$id_curso')";
+
+        if($conexao->query($sql) == TRUE){
+            echo json_encode([
+                'mensagem' => 'Matricula cadastrada com sucesso'
+            ]);
+        }
+        else {
+            echo json_encode([
+                'mensagem' => 'ERRO NO CADASTRO DA MATRICULA'
             ]);
         }
     }
