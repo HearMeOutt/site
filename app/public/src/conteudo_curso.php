@@ -17,7 +17,7 @@
     $id_curso = $_GET['id'];
     
     $url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
-    // $url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
+    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
     
@@ -50,7 +50,7 @@
     $id_curso = $_GET['id'];
     
     $url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
-    // $url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
+    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
 
@@ -79,22 +79,78 @@
                     <p class="MontserratRegular"><?php echo($data['dados']['descricao']); ?></p>
                 </div>
             </div>
-            <div class="aula">
-                <div class="titulo_aula">
-                    <h1 class="Michroma">Aula 1 - Introdução a Libras</h1>
-                </div>
-                <div class="videoaula">
-                    <video src="../conteudo/teórico/video/aula1.mp4" controls></video>
-                </div>
-                <div class="btns_aula">
-                    <a href="" class="MontserratRegular">Aula anterior</a>
-                    <a href="" class="MontserratRegular">Avançar</a>
-                </div>
-                <div class="btn_pdf_ia">
-                    <a href="../conteudo/teórico/pdf/Teórico.pdf" target="_blank" class="MontserratRegular">Baixar PDF completo do módulo</a>
-                    <a href="" class="MontserratRegular">Iniciar correção com IA</a>    
-                </div>
-            </div>
+
+            
+            <?php
+                $caminho = $data['dados']['nome'];
+            
+                $url = "http://localhost/site/api/api.php/aulas/id_curso/{$id_curso}";
+                //$url = "https://hearmeout.informatica3c.com.br/api/api.php/aulas/id_curso/{$id_curso}";
+                $response = file_get_contents($url);
+                $data = json_decode($response, true);
+
+                if (isset($data['dados']) && count($data['dados']) > 0) {
+                    ?>
+                    <div class="aula" id="aulaInfo">
+                        <div class="titulo_aula">
+                            <h1 class="Michroma">Aula <?php echo htmlspecialchars($data['dados'][0]['id_aula']); ?> - <?php echo htmlspecialchars($data['dados'][0]['nome']); ?></h1>
+                        </div>
+                        <div class="videoaula">
+                            <video src="../conteudo/<?php echo($caminho); ?>/video/<?php echo($data['dados'][0]['videoaula']); ?>.mp4" controls></video>
+                        </div>
+                        <div class="btns_aula">
+                            <a id='anteriorBtn'class="MontserratRegular" onclick="mostrarAulaAtual(-1)" style="display: none;">Aula anterior</a>
+                            <a id='proximoBtn' class="MontserratRegular" onclick="mostrarAulaAtual(1)">Próxima Aula</a>
+                        </div>
+                        <div class="btn_pdf_ia">
+                            <a href="../conteudo/<?php echo($caminho); ?>/pdf/<?php echo($caminho); ?>.pdf" target="_blank" class="MontserratRegular">Baixar PDF completo do módulo</a>
+                            <?php
+                                if(($caminho == 'Alfabeto em libras')){
+                                    ?>
+                                        <a href="correcao_alfabeto.php?id=<?php echo($id_curso); ?>" class="MontserratRegular">Iniciar correção com IA</a>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+
+                    <?php
+                } else {
+                    echo '<p>Nenhuma aula encontrada.</p>';
+                }
+            ?>
+
+            <script>
+                var aulas = <?php echo json_encode($data['dados']); ?>;
+                var totalAulas = aulas.length;
+                var aulaAtual = 0;
+
+                function atualizarExibicaoAula() {
+                    var aulaAtualData = aulas[aulaAtual];
+
+                    // Atualizar título
+                    document.querySelector(".titulo_aula h1").innerHTML = "Aula " + aulaAtualData.id_aula + " - " + aulaAtualData.nome;
+
+                    // Atualizar vídeo
+                    var video = document.querySelector(".videoaula video");
+                    video.src = "../conteudo/<?php echo($caminho); ?>/video/" + aulaAtualData.videoaula + ".mp4";
+
+                    // Exibir ou ocultar botões conforme a posição da aula
+                    document.getElementById("anteriorBtn").style.display = aulaAtual > 0 ? "inline-block" : "none";
+                    document.getElementById("proximoBtn").style.display = aulaAtual < totalAulas - 1 ? "inline-block" : "none";
+                }
+
+                function mostrarAulaAtual(direcao) {
+                    aulaAtual += direcao;
+                    if (aulaAtual < 0) aulaAtual = 0;
+                    if (aulaAtual >= totalAulas) aulaAtual = totalAulas - 1;
+                    atualizarExibicaoAula();
+                }
+
+                // Inicializar a exibição
+                atualizarExibicaoAula();
+            </script>
+                
         </div>
         <?php
             include('../assets/components/footer.php');

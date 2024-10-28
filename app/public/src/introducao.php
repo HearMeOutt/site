@@ -67,7 +67,7 @@
 
                     <?php 
                         $url = 'http://localhost/site/api/api.php/cursos';
-                        // $url = 'https://hearmeout.informatica3c.com.br/api/api.php/cursos';
+                        //$url = 'https://hearmeout.informatica3c.com.br/api/api.php/cursos';
                         $response = file_get_contents($url);
                         $data = json_decode($response, true);
 
@@ -87,7 +87,7 @@
                                             </div>
                                             <div class="btn_libras">
                                                 <a href="<?php if($logado == true){echo("pagamento.php?curso=".$cursos['id_curso']);}else{echo('login.php');}?>" class="btn_comprar MontserratRegular">R$ <?php echo($cursos['valor']); ?></a>
-                                                <a href="modulo_teorico.php" class="visualizar MontserratRegular">VISUALIZAR</a>
+                                                <a href="<?php echo($cursos['nome']); ?>.php" class="visualizar MontserratRegular">VISUALIZAR</a>
                                             </div>
                                         </div>
                                     </div>

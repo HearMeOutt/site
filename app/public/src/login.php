@@ -13,8 +13,8 @@
 
 
         if(!empty($data['dados']['email'])){
-            echo 'email encontrado';
-            echo $data['dados']['email'];
+            //echo 'email encontrado';
+            //echo $data['dados']['email'];
             if(password_verify(($senha_login),$data['dados']['senha'])){
                 $_SESSION['id_usuario'] = $data['dados']['id_usuario'];
                 echo 'login realizado com sucesso';

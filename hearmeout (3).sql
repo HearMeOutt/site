@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/10/2024 às 05:33
+-- Tempo de geração: 28/10/2024 às 13:21
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -30,8 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `aulas` (
   `id_aula` int(11) NOT NULL,
   `nome` varchar(255) DEFAULT NULL,
-  `imgs` text DEFAULT NULL
+  `videoaula` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `aulas`
+--
+
+INSERT INTO `aulas` (`id_aula`, `nome`, `videoaula`) VALUES
+(1, 'Origem das Libras', 'aula1');
 
 -- --------------------------------------------------------
 
@@ -74,7 +81,11 @@ CREATE TABLE `matriculas` (
 
 INSERT INTO `matriculas` (`id_matricula`, `fk_usuarios_id_usuario`, `fk_cursos_id_curso`) VALUES
 (17, 1, 2),
-(18, 1, 1);
+(18, 1, 1),
+(19, 9, 1),
+(20, 8, 1),
+(21, 8, 2),
+(22, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -84,8 +95,16 @@ INSERT INTO `matriculas` (`id_matricula`, `fk_usuarios_id_usuario`, `fk_cursos_i
 
 CREATE TABLE `modulo` (
   `fk_aulas_id_aula` int(11) DEFAULT NULL,
-  `fk_cursos_id_curso` int(11) DEFAULT NULL
+  `fk_cursos_id_curso` int(11) DEFAULT NULL,
+  `pdf` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `modulo`
+--
+
+INSERT INTO `modulo` (`fk_aulas_id_aula`, `fk_cursos_id_curso`, `pdf`) VALUES
+(1, 1, 'Teórico.pdf');
 
 -- --------------------------------------------------------
 
@@ -108,7 +127,10 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id_usuario`, `nome`, `email`, `telefone`, `senha`) VALUES
 (1, 'Marcus', 'moreira.marcus.vb@gmail.com', '', '$2y$10$26RI0af.0wxYO762TAkblehbgMlbyeBrAJrefvAj5TFxoD03TU.hi'),
 (5, 'teste', 'teste@gmail.com', '', '$2y$10$Ac17NsIUAj.8CSkdb5zh6eaECDOVuIVyzzdNDperEdZKYfBcwlpu6'),
-(7, 'teste2', 'teste2@gmail.com', '(11)12345-6798', '$2y$10$.kecmYn/H7liIGFVkr1kLe5Cn8VmRpYZQhdZIeE04GTY1Mzr074sK');
+(7, 'teste2', 'teste2@gmail.com', '(11)12345-6798', '$2y$10$.kecmYn/H7liIGFVkr1kLe5Cn8VmRpYZQhdZIeE04GTY1Mzr074sK'),
+(8, 'thifany', 'thifany@gmail.com', '(11)95948-2807', '$2y$10$MdaXR7knMukh2jIYKOxTVO37nM1/8TeMUKTeBIChlXKnx2E98jjgu'),
+(9, 'Vinicius', 'spaccxproject@gmail.com', '(11)98239-3222', '$2y$10$nFotWmlM4MBE/iLXj/CmTuJmJarE/8O2iheJHATLGmv8No3v.VrTq'),
+(10, 'Maria', 'mariaisadoraclaudino1@gmail.com', '(11)99698-7411', '$2y$10$zWukB1fV2j2C9Abut8Fyi.UKwv5WSft6I9EG/p8o6dKwQl3yRhe22');
 
 --
 -- Índices para tabelas despejadas
@@ -155,7 +177,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `aulas`
 --
 ALTER TABLE `aulas`
-  MODIFY `id_aula` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_aula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
@@ -167,13 +189,13 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT de tabela `matriculas`
 --
 ALTER TABLE `matriculas`
-  MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para tabelas despejadas

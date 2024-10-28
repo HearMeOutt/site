@@ -1,0 +1,113 @@
+/* !CORES! */
+:root{
+    --Preto-cor: #2d2d29;
+    --Cinza-cor: #CCC;
+    --Branco-cor: #fff;
+    --CinzaClaro-cor:#f5f5f5;
+    --AzulEscuro-cor: #215a6d;
+    --AzulClaro-cor: #3ca2a2;
+    --Verde-cor: #92c7a3;
+    --VerdeEscuro-cor: #7bab8a;
+    --CinzaClaro-cor: #dfece6;
+    --VerdeCorreto-cor: #03D845;
+    --FundoCamera: #D9D9D9;
+}
+
+/* !TESTE GRÁTIS! */
+.container{
+    width: 94%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.titulo_teste{
+    width: 94%;
+    padding-left: 6%;
+    display: flex;
+    align-items: center;
+}
+.titulo_teste h1{
+    font-size: 1.7em;
+    color: var(--AzulEscuro-cor);
+}
+.instrucao{
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+}
+.instrucao h2{
+    font-size: 1em;
+    color: var(--AzulEscuro-cor);
+}
+.container_teste{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container_camera{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.camera{
+    display: flex;
+    width: 500px;
+    height: 300px;
+    background-color: var(--FundoCamera);
+    border-radius: 10px;
+    border: solid 4px var(--FundoCamera);
+}
+.camera.active{
+    border: solid 4px var(--VerdeCorreto-cor);
+}
+.resultado{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.container_numero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+.container_numero div{
+    font-size: 3em;
+}
+.identificado{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.identificado h1{
+    display: none;
+    font-family: 1.3em;
+    color: var(--AzulEscuro-cor);
+}
+.identificado h1.active{
+    display: flex;
+}
+.voltar{
+    display: flex;
+    position: absolute;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: var(--Preto-cor);
+}
+.voltar:hover{
+    font-size: 3em;
+}
+.imagem-container{
+    display: flex;
+}
+.imagem-container img{
+    width: 50%;
+}

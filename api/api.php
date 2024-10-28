@@ -32,8 +32,8 @@
 
     //echo json_encode($resposta);
 
-
-    /* switch($metodo){
+    /*
+    switch($metodo){
         case 'GET':
             if ($terceiraparte == 'usuarios' && $quartaparte == 'email' && $quintaparte != ''){
                 GetAlunosByEmail($quintaparte);
@@ -75,8 +75,8 @@
                 'mensagem' => 'Método não permitido!'
             ]);
             break;
-    } */
-    
+    }
+    */
     
     // !LOCAL!
     switch($metodo){
@@ -95,6 +95,9 @@
             }
             if ($quartaparte == 'matricula' && $quintaparte == 'id_usuario' && $sextaparte != ''){
                 GetMatriculaByIDUsuario($sextaparte);
+            }
+            if ($quartaparte == 'aulas' && $quintaparte == 'id_curso' && $sextaparte != ''){
+                GetAulaByIDModulo($sextaparte);
             }
             break;
         
@@ -122,6 +125,7 @@
             ]);
             break;
     }
+    
 
 
 
@@ -168,7 +172,7 @@
         ]);
     }
 
-    // function GetCursosByID($quintaparte){
+    //function GetCursosByID($quintaparte){
     function GetCursosByID($sextaparte){
         global $conexao;
         //$stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = '$quintaparte'");
@@ -193,6 +197,29 @@
             'mensagem' => 'LISTA todas as matriculas vinculadas com o id do usuario',
             'dados' => $matricula
         ]);
+    }
+
+    //function GetAulaByIDModulo($quintaparte){
+    function GetAulaByIDModulo($sextaparte){
+        global $conexao;
+        //$stmt = $conexao->prepare("SELECT * FROM aulas WHERE fk_modulo_id_modulo = $quintaparte");
+        $stmt = $conexao->prepare("SELECT * FROM aulas WHERE fk_cursos_id_curso = $sextaparte");
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+    
+        // Verificar se há aulas para o módulo informado
+        if ($resultado->num_rows > 0) {
+            $aulas = $resultado->fetch_all(MYSQLI_ASSOC);
+            echo json_encode([
+                'mensagem' => 'Aulas do módulo',
+                'dados' => $aulas
+            ]);
+        } else {
+            echo json_encode([
+                'mensagem' => 'Nenhuma aula encontrada para o módulo especificado',
+                'dados' => []
+            ]);
+        }
     }
 
 

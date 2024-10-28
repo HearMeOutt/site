@@ -14,8 +14,8 @@
 ?>
 <?php
     $id_usuario = $_SESSION['id_usuario'];
-    $url = "http://localhost/site/api/api.php/usuarios/id/{$id_usuario}";
-    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/usuarios/id/{$id_usuario}";
+    //$url = "http://localhost/site/api/api.php/usuarios/id/{$id_usuario}";
+    $url = "https://hearmeout.informatica3c.com.br/api/api.php/usuarios/id/{$id_usuario}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
 ?>
@@ -53,7 +53,7 @@
                     <?php
 
                         $url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
-                        // $url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
+                        //$url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
                         $response = file_get_contents($url);
                         $data = json_decode($response, true);
 
@@ -61,6 +61,7 @@
                             foreach ($data['dados'] as $matricula) {
                                 $id_curso = $matricula['fk_cursos_id_curso'];
                                 
+                                //$url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
                                 $url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
                                 $response = file_get_contents($url);
                                 $dados = json_decode($response, true);
