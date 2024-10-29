@@ -17,8 +17,8 @@
     $id_usuario = $_SESSION['id_usuario'];
     $id_curso = $_GET['curso'];
 
-    //$url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
-    $url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
+    $url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
+    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
 ?>

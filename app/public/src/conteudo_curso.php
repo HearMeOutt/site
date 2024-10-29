@@ -16,8 +16,8 @@
     $id_usuario = $_SESSION['id_usuario'];
     $id_curso = $_GET['id'];
     
-    //$url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
-    $url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
+    $url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
+    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
     
@@ -49,8 +49,8 @@
 <?php
     $id_curso = $_GET['id'];
     
-    //$url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
-    $url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
+    $url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
+    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
 
@@ -84,8 +84,8 @@
             <?php
                 $caminho = $data['dados']['nome'];
             
-                //$url = "http://localhost/site/api/api.php/aulas/id_curso/{$id_curso}";
-                $url = "https://hearmeout.informatica3c.com.br/api/api.php/aulas/id_curso/{$id_curso}";
+                $url = "http://localhost/site/api/api.php/aulas/id_curso/{$id_curso}";
+                //$url = "https://hearmeout.informatica3c.com.br/api/api.php/aulas/id_curso/{$id_curso}";
                 $response = file_get_contents($url);
                 $data = json_decode($response, true);
 
