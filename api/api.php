@@ -50,6 +50,9 @@
             if ($terceiraparte == 'matricula' && $quartaparte == 'id_usuario' && $quintaparte != ''){
                 GetMatriculaByIDUsuario($quintaparte);
             }
+            if ($terceiraparte == 'aulas' && $quartaparte == 'id_curso' && $quintaparte != ''){
+                GetAulaByIDModulo($quintaparte);
+            }
             break;
         
         case 'POST':
@@ -125,7 +128,7 @@
             ]);
             break;
     }
-    
+    */
 
 
 
