@@ -82,6 +82,7 @@ video{
     border-radius: 10px;
     border: solid 1px var(--AzulEscuro-cor);
     font-size: 1.1em;
+    cursor: pointer;
 }
 .btns_aula a:hover{
     background-color: var(--CinzaClaro-cor);

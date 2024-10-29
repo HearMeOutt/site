@@ -47,8 +47,9 @@
     justify-content: center;
 }
 .container_camera{
-    width: 70%;
+    width: 60%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -64,7 +65,7 @@
     border: solid 4px var(--VerdeCorreto-cor);
 }
 .resultado{
-    width: 30%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +76,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    height: 150px;
 }
 .container_numero div{
     font-size: 3em;
@@ -107,7 +108,26 @@
 }
 .imagem-container{
     display: flex;
+    justify-content: space-between;
 }
 .imagem-container img{
-    width: 50%;
+    width: 45%;
+}
+.container_btn{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+.container_btn button{
+    padding: 2% 3% 2% 3%;
+    border: solid 1px var(--VerdeEscuro-cor);
+    background-color: var(--VerdeEscuro-cor);
+    border-radius: 8px;
+    color: var(--Preto-cor);
+    font-size: 1.1em;
+    transition: 0.5s;
+}
+.container_btn button:hover{
+    background-color: var(--CinzaClaro-cor);
 }
