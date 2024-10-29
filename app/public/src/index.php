@@ -35,7 +35,7 @@
                     </div>
                     <div class="btn_topo">
                         <a href="introducao.php" class="btn_aprender MontserratBold">
-                            APRENDA LIBRAS GRATUITAMENTE!
+                            APRENDA LIBRAS NA HEARMEOUT !
                         </a>
                     </div>
                 </div>
@@ -89,15 +89,12 @@
                         </div>
                         <div class="list_conheca">
                             <div class="list_conheca_item">
-                                <i class="fa-regular fa-face-smile"></i>
                                 <h1 class="MontserratBold">Explicação simplificada</h1>
                             </div>
                             <div class="list_conheca_item">
-                                <i class="fa-regular fa-thumbs-up"></i>
                                 <h1 class="MontserratBold">Do teórico ao prático</h1>
                             </div>
                             <div class="list_conheca_item">
-                                <i class="fa-regular fa-clock"></i>
                                 <h1 class="MontserratBold">Corretor em tempo real</h1>
                             </div>
                         </div>
@@ -114,7 +111,7 @@
                         </h2>
                     </div>
                     <div class="btn_alfabeto">
-                        <a href="#" class="MontserratBold">INSCREVA-SE JÁ!</a>
+                        <a href="introducao.php" class="MontserratBold">INSCREVA-SE JÁ!</a>
                     </div>
                 </div>
                 <div class="img_alfabeto">

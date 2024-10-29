@@ -16,8 +16,8 @@
     $id_usuario = $_SESSION['id_usuario'];
     $id_curso = $_GET['id'];
     
-    $url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
-    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
+    //$url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
+    $url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
     
@@ -49,8 +49,8 @@
 <?php
     $id_curso = $_GET['id'];
     
-    $url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
-    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
+    //$url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
+    $url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
 
@@ -90,6 +90,9 @@
                     <div class="camera" id="camera">
                         <div id="webcam-container" class="webcam"></div>
                     </div>
+                    <div class="identificado">
+                        <h1 class="MontserratBold" id="identificado">Sinal identificado</h1>
+                    </div>  
                 </div>
                 <div class="resultado">
                     <div class="imagem-container">
@@ -100,15 +103,12 @@
                         <div id="label-container" class="MontserratRegular"></div>
                     </div>
                     <div class="container_btn">
-                        <button type="button" id="prevButton" onclick="previousLetter()">Letra Anterior</button>
-                        <button type="button" id="nextButton" onclick="nextLetter()">Próxima Letra</button>
-                        <button type="button" onclick="init()">Começar</button>
+                        <button type="button" class="Montserrat" id="prevButton" onclick="previousLetter()">Letra Anterior</button>
+                        <button type="button" class="Montserrat" onclick="init()">Começar</button>
+                        <button type="button" class="Montserrat" id="nextButton" onclick="nextLetter()">Próxima Letra</button>
                     </div>
                 </div>
-            </div>
-            <div class="identificado">
-                <h1 class="MontserratBold" id="identificado">Sinal identificado</h1>
-            </div>   
+            </div> 
         </div>
         <?php
             include('../assets/components/footer.php');

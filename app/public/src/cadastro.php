@@ -9,6 +9,8 @@
     <body>
         <div class="content">
             <a href="javascript:history.back()" class="voltar"><i class="fa-solid fa-angle-left"></i></a>
+            <div class="container_esquerda">
+            </div>
             <div class="login_cadastro">
                 <div class="titulo">
                     <h1 class="MontserratBold">Cadastro</h1>
@@ -49,7 +51,7 @@
                         </div>
                         <div class="item_forms">
                             <div class="politica">
-                                <input type="checkbox" name="politica_privacidade" id="politica_privacidade">
+                                <input type="checkbox" class="checkbox" name="politica_privacidade" id="politica_privacidade">
                                 <h2 class="MontserratRegular">Li e aceito a <a href="">política de privacidade</a></h2>
                             </div>
                             <span class="MontserratRegular" id="span_politica_privacidade">É preciso aceitar os termos</span>

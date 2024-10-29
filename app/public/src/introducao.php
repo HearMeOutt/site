@@ -66,8 +66,8 @@
                     </div> -->
 
                     <?php 
-                        $url = 'http://localhost/site/api/api.php/cursos';
-                        //$url = 'https://hearmeout.informatica3c.com.br/api/api.php/cursos';
+                        //$url = 'http://localhost/site/api/api.php/cursos';
+                        $url = 'https://hearmeout.informatica3c.com.br/api/api.php/cursos';
                         $response = file_get_contents($url);
                         $data = json_decode($response, true);
 
@@ -98,7 +98,7 @@
                         }
                     ?>
 
-                    <!-- <div class="card_modulo card3">
+                    <div class="card_modulo card3">
                         <div class="img_card">
                             <div class="gear">
                                 <img src="https://assets.codepen.io/6093409/gear.svg.png" alt="an illustration of a gear" />
@@ -107,7 +107,7 @@
                         <div class="nome_modulo">
                             <h2 class="Michroma">Em desenvolvimento</h2>
                         </div>
-                    </div> -->
+                    </div>
 
                 </div>
             </div>
