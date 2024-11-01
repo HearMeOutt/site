@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29/10/2024 às 13:37
+-- Tempo de geração: 01/11/2024 às 02:20
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -96,6 +96,27 @@ INSERT INTO `matriculas` (`id_matricula`, `fk_usuarios_id_usuario`, `fk_cursos_i
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `suporte`
+--
+
+CREATE TABLE `suporte` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `assunto` varchar(255) NOT NULL,
+  `mensagem` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `suporte`
+--
+
+INSERT INTO `suporte` (`id`, `nome`, `email`, `assunto`, `mensagem`) VALUES
+(4, '', 'spaccxproject@gmail.com', 'Parceria', 'xhjbxhbnxjxnhj');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `usuarios`
 --
 
@@ -145,6 +166,12 @@ ALTER TABLE `matriculas`
   ADD KEY `FK_matriculas_3` (`fk_cursos_id_curso`);
 
 --
+-- Índices de tabela `suporte`
+--
+ALTER TABLE `suporte`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -171,6 +198,12 @@ ALTER TABLE `cursos`
 --
 ALTER TABLE `matriculas`
   MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT de tabela `suporte`
+--
+ALTER TABLE `suporte`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
