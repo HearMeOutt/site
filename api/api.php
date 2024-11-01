@@ -111,6 +111,9 @@
             if ($quartaparte == 'matricula'){
                 PostMatricula();
             }
+            if ($quartaparte == 'suporte'){
+                PostSuporte();
+            }
             break;
             
         case 'PUT':
@@ -266,6 +269,28 @@
         else {
             echo json_encode([
                 'mensagem' => 'ERRO NO CADASTRO DA MATRICULA'
+            ]);
+        }
+    }
+    function PostSuporte(){
+        global $conexao;
+        $input = json_decode(file_get_contents('php://input'), true);
+        $nome = $input['nome'];
+        $email = $input['email'];
+        $assunto = $input['assunto'];
+        $mensagem = $input['mensagem'];
+
+        $sql = "INSERT INTO suporte (nome,email,assunto,mensagem) VALUES ('$nome','$email','$assunto','$mensagem')";
+
+        
+        if($conexao->query($sql) == TRUE){
+            echo json_encode([
+                'mensagem' => 'FORMULARIO CADASTRADO COM SUCESSO'
+            ]);
+        }
+        else {
+            echo json_encode([
+                'mensagem' => 'ERRO NO FORMULARIO'
             ]);
         }
     }
