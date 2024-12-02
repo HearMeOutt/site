@@ -14,8 +14,8 @@
         ),
     );
     $context  = stream_context_create($options);
-     $url = 'http://localhost/site/api/api.php/suporte';
-    //$url = 'https://hearmeout.informatica3c.com.br/api/api.php/suporte';
+    //$url = 'http://localhost/site/api/api.php/suporte';
+    $url = 'https://hearmeout.informatica3c.com.br/api/api.php/suporte';
 
     $result = file_get_contents($url, false, $context);
 

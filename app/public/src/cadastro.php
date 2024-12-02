@@ -10,6 +10,7 @@
         <div class="content">
             <a href="javascript:history.back()" class="voltar"><i class="fa-solid fa-angle-left"></i></a>
             <div class="container_esquerda">
+            <img src="../assets/img/login.png" alt="">
             </div>
             <div class="login_cadastro">
                 <div class="titulo">

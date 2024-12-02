@@ -11,7 +11,7 @@
                 </div>
                 <nav class="menu" id="menu">
                     <a href="index.php" class="itens_nav">PÁGINA INICIAL</a>
-                    <a href="introducao.php" class="itens_nav">INTORDUÇÃO À LIBRAS</a>
+                    <a href="introducao.php" class="itens_nav">INTRODUÇÃO À LIBRAS</a>
                     <a href="suporte.php" class="itens_nav">SUPORTE</a>
                     <?php
                         if($logado == false){

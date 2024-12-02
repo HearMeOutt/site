@@ -14,8 +14,8 @@
         );
 
         $context  = stream_context_create($options);
-        $url = 'http://localhost/site/api/api.php/matricula';
-        //$url = 'https://hearmeout.informatica3c.com.br/api/api.php/matricula';
+        //$url = 'http://localhost/site/api/api.php/matricula';
+        $url = 'https://hearmeout.informatica3c.com.br/api/api.php/matricula';
         $result = file_get_contents($url, false, $context);
 
         echo($result);

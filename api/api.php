@@ -32,7 +32,7 @@
 
     //echo json_encode($resposta);
 
-    /*
+    
     switch($metodo){
         case 'GET':
             if ($terceiraparte == 'usuarios' && $quartaparte == 'email' && $quintaparte != ''){
@@ -62,6 +62,9 @@
             if ($terceiraparte == 'matricula'){
                 PostMatricula();
             }
+            if ($terceiraparte == 'suporte'){
+                PostSuporte();
+            }
             break;
             
         case 'PUT':
@@ -79,8 +82,8 @@
             ]);
             break;
     }
-    */
     
+    /*
     // !LOCAL!
     switch($metodo){
         case 'GET':
@@ -131,16 +134,16 @@
             ]);
             break;
     }
-
+    */
 
 
     //!FUNCTIONS
     //!GET
-    //function GetAlunosByEmail($quintaparte){
-    function GetAlunosByEmail($sextaparte){
+    function GetAlunosByEmail($quintaparte){
+    //function GetAlunosByEmail($sextaparte){
         global $conexao;
-        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
-        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$sextaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$quintaparte'");
+        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
@@ -152,11 +155,11 @@
         
     }
     
-    //function GetAlunosByID($quintaparte){
-    function GetAlunosByID($sextaparte){
+    function GetAlunosByID($quintaparte){
+    //function GetAlunosByID($sextaparte){
         global $conexao;
-        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$quintaparte'");
-        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$sextaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$quintaparte'");
+        //$stmt = $conexao->prepare("SELECT * FROM usuarios WHERE id_usuario = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $usuario = $resultado->fetch_assoc();
@@ -177,11 +180,11 @@
         ]);
     }
 
-    //function GetCursosByID($quintaparte){
-    function GetCursosByID($sextaparte){
+    function GetCursosByID($quintaparte){
+    //function GetCursosByID($sextaparte){
         global $conexao;
-        //$stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = '$quintaparte'");
-        $stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = '$sextaparte'");
+        $stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = '$quintaparte'");
+        //$stmt = $conexao->prepare("SELECT * FROM cursos WHERE id_curso = '$sextaparte'");
         $stmt->execute();
         $resultado = $stmt->get_result();
         $curso = $resultado->fetch_assoc();
@@ -192,11 +195,11 @@
         ]);
     }
 
-    //function GetMatriculaByIDUsuario($quintaparte){
-    function GetMatriculaByIDUsuario($sextaparte){
+    function GetMatriculaByIDUsuario($quintaparte){
+    //function GetMatriculaByIDUsuario($sextaparte){
         global $conexao;
-        //$resultado = $conexao->query("SELECT * FROM matriculas WHERE fk_usuarios_id_usuario = $quintaparte");
-        $resultado = $conexao->query("SELECT * FROM matriculas WHERE fk_usuarios_id_usuario = $sextaparte");
+        $resultado = $conexao->query("SELECT * FROM matriculas WHERE fk_usuarios_id_usuario = $quintaparte");
+        //$resultado = $conexao->query("SELECT * FROM matriculas WHERE fk_usuarios_id_usuario = $sextaparte");
         $matricula = $resultado->fetch_all(MYSQLI_ASSOC);
         echo json_encode([
             'mensagem' => 'LISTA todas as matriculas vinculadas com o id do usuario',
@@ -204,11 +207,11 @@
         ]);
     }
 
-    //function GetAulaByIDModulo($quintaparte){
-    function GetAulaByIDModulo($sextaparte){
+    function GetAulaByIDModulo($quintaparte){
+    //function GetAulaByIDModulo($sextaparte){
         global $conexao;
-        //$stmt = $conexao->prepare("SELECT * FROM aulas WHERE fk_modulo_id_modulo = $quintaparte");
-        $stmt = $conexao->prepare("SELECT * FROM aulas WHERE fk_cursos_id_curso = $sextaparte");
+        $stmt = $conexao->prepare("SELECT * FROM aulas WHERE fk_cursos_id_curso = $quintaparte");
+        //$stmt = $conexao->prepare("SELECT * FROM aulas WHERE fk_cursos_id_curso = $sextaparte");
         $stmt->execute();
         $resultado = $stmt->get_result();
     

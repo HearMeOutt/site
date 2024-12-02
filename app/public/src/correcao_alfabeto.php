@@ -16,8 +16,8 @@
     $id_usuario = $_SESSION['id_usuario'];
     $id_curso = $_GET['id'];
     
-    $url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
-    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
+    //$url = "http://localhost/site/api/api.php/matricula/id_usuario/{$id_usuario}";
+    $url = "https://hearmeout.informatica3c.com.br/api/api.php/matricula/id_usuario/{$id_usuario}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
     
@@ -49,8 +49,8 @@
 <?php
     $id_curso = $_GET['id'];
     
-    $url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
-    //$url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
+    //$url = "http://localhost/site/api/api.php/cursos/id/{$id_curso}";
+    $url = "https://hearmeout.informatica3c.com.br/api/api.php/cursos/id/{$id_curso}";
     $response = file_get_contents($url);
     $data = json_decode($response, true);
 
@@ -67,11 +67,7 @@
         
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-        <script src="../assets/IA/Alfabeto em Libras/AB/AB.js"></script>
-
-        <script>
-            
-        </script>
+        <script src="../assets/IA/alfabeto/AB/AB.js"></script>
     </head>
     <body>
         <?php

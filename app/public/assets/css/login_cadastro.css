@@ -115,7 +115,7 @@ input:focus{
     left: 50px;
     font-size: 2.5em;
     cursor: pointer;
-    color: var(--Preto-cor);
+    color: var(--Branco-cor);
 }
 .content .voltar:hover{
     font-size: 3em;
@@ -165,6 +165,12 @@ input:focus{
     width: 40%;
     height: 100vh;
     background-color: var(--AzulClaro-cor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container_esquerda img{
+    width: 70%;
 }
 .checkbox{
     box-shadow: none;

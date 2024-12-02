@@ -6,8 +6,8 @@
         $email_login = $_POST['email'];
         $senha_login = $_POST['senha'];
 
-        $url = "http://localhost/site/api/api.php/usuarios/email/{$email_login}";
-        //$url = "https://hearmeout.informatica3c.com.br/api/api.php/usuarios/email/{$email_login}";
+        //$url = "http://localhost/site/api/api.php/usuarios/email/{$email_login}";
+        $url = "https://hearmeout.informatica3c.com.br/api/api.php/usuarios/email/{$email_login}";
         $response = file_get_contents($url);
         $data = json_decode($response, true);
 
@@ -42,6 +42,7 @@
         <div class="content">
             <a href="index.php" class="voltar"><i class="fa-solid fa-angle-left"></i></a>
             <div class="container_esquerda">
+                <img src="../assets/img/login.png" alt="">
             </div>
             <div class="login_cadastro">
                 <div class="titulo">

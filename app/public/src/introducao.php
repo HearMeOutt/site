@@ -66,8 +66,8 @@
                     </div> -->
 
                     <?php 
-                        $url = 'http://localhost/site/api/api.php/cursos';
-                        //$url = 'https://hearmeout.informatica3c.com.br/api/api.php/cursos';
+                        //$url = 'http://localhost/site/api/api.php/cursos';
+                        $url = 'https://hearmeout.informatica3c.com.br/api/api.php/cursos';
                         $response = file_get_contents($url);
                         $data = json_decode($response, true);
 
